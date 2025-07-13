@@ -15,7 +15,7 @@ export default function Page() {
       <div className='pl-12'>
         <main>
           {/* padding left should be more than the width of the fixed vertical bar */}
-          <div className='h-16 bg-sidebar fixed w-full'>
+          <div className='h-16 bg-sidebar/10 backdrop-blur-xs fixed w-full z-10'>
             <HorizontalBar />
           </div>
           <div className='pt-16'>

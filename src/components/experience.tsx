@@ -1,6 +1,6 @@
 export function ExperienceSection() {
   return (
-    <section id='#experience' className='bg-fuchsia-500  my-4 p-8'>
+    <section id='experience' className='bg-fuchsia-500  my-4 p-8'>
       <h3 className='text-6xl leading-24 font-semibold flex items-center after:border-b-2 after:grow after:ml-6'>Experience</h3>
       <ul>
         <li>
