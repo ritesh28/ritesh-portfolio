@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export function HeroSection() {
   return (
-    <section className='relative py-[calc(100vh/4)] p-8 pr-40'>
+    <>
       <div className='absolute h-full aspect-square top-0 right-0 bg-amber-300'>
         <div className='grid place-content-center h-full underline'>SOME JS ANIMATION</div>
       </div>
@@ -21,6 +21,6 @@ export function HeroSection() {
           <Link href='#contact'>Contact Me</Link>
         </Button>
       </div>
-    </section>
+    </>
   );
 }

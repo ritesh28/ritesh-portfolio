@@ -1,6 +1,9 @@
+import { StaticImageData } from 'next/image';
 import { IconType } from 'react-icons';
 import { RiNextjsFill } from 'react-icons/ri';
 import { SiDocker, SiNestjs, SiPython, SiVorondesign } from 'react-icons/si';
+import Infosys from '../public/infosys.png';
+import Pwc from '../public/pwc.png';
 
 interface SkillProps {
   name: string;
@@ -21,3 +24,30 @@ export const FRONTEND_SKILL_GROUP = [SKILLS.nextjs];
 export const BACKEND_SKILL_GROUP = [SKILLS.nestjs, SKILLS.python];
 export const DEVOPS_SKILL_GROUP = [SKILLS.docker];
 export const MISC_SKILL_GROUP = [SKILLS.designPatterns];
+
+interface Experience {
+  company_name: string;
+  company_logo: StaticImageData;
+  duration: string;
+  designation: string;
+  workDescription: string;
+}
+
+export const EXPERIENCE: Experience[] = [
+  {
+    company_name: 'Infosys',
+    company_logo: Infosys,
+    duration: '2015 - 2022',
+    designation: 'Technical Lead',
+    workDescription:
+      'I help build and scale Google Photos. Increased throughput of our primary services by 70%. Migrated backend service from Java to Go. Also helped make it look prettier.',
+  },
+  {
+    company_name: 'Pwc',
+    company_logo: Pwc,
+    duration: '2022 - Present',
+    designation: 'Senior Analyst',
+    workDescription:
+      'I help build and scale Google Photos. Increased throughput of our primary services by 70%. Migrated backend service from Java to Go. Also helped make it look prettier.',
+  },
+];

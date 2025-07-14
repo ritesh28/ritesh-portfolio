@@ -9,7 +9,7 @@ import MyDP from '../../public/ritesh_dp.png';
 
 export function ProjectsSection() {
   return (
-    <section id='projects' className='bg-green-400  my-4 p-8'>
+    <>
       <h3 className='text-6xl leading-24 font-semibold flex items-center before:border-b-2 before:grow before:mr-6'>Projects</h3>
       <ul className='grid grid-cols-3'>
         <li>
@@ -55,6 +55,6 @@ export function ProjectsSection() {
           </Card>
         </li>
       </ul>
-    </section>
+    </>
   );
 }

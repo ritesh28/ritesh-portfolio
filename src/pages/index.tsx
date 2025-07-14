@@ -22,11 +22,21 @@ export default function Page() {
             {/* padding top should be more than the height of the fixed horizontal bar */}
             <div className='mx-28'>
               {/* center flow layout content */}
-              <HeroSection />
-              <SkillsSection />
-              <ProjectsSection />
-              <ExperienceSection />
-              <ContactSection />
+              <section className='relative py-[calc(100vh/4)] p-8 pr-40'>
+                <HeroSection />
+              </section>
+              <section id='skills' className='bg-violet-400 my-4 p-8'>
+                <SkillsSection />
+              </section>
+              <section id='projects' className='bg-green-400  my-4 p-8'>
+                <ProjectsSection />
+              </section>
+              <section id='experience' className='bg-fuchsia-500  my-4 p-8'>
+                <ExperienceSection />
+              </section>
+              <section id='contact' className='bg-indigo-300  my-4 p-8'>
+                <ContactSection />
+              </section>
             </div>
           </div>
         </main>

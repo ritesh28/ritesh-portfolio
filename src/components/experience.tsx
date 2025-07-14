@@ -1,26 +1,36 @@
-'use client';
-import { MdWork } from 'react-icons/md';
-import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
+import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Separator } from '@/components/ui/separator';
+import { cn } from '@/lib/utils';
+import { EXPERIENCE } from '@/models';
+import Image from 'next/image';
 
 export function ExperienceSection() {
   return (
-    <section id='experience' className='bg-fuchsia-500  my-4 p-8'>
+    <>
       <h3 className='text-6xl leading-24 font-semibold flex items-center after:border-b-2 after:grow after:ml-6'>Experience</h3>
-      <VerticalTimeline>
-        <VerticalTimelineElement
-          className='vertical-timeline-element--work'
-          contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-          contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-          date='2011 - present'
-          iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-          icon={<MdWork />}
-        >
-          <h3 className='vertical-timeline-element-title'>Creative Director</h3>
-          <h4 className='vertical-timeline-element-subtitle'>Miami, FL</h4>
-          <p>Creative Direction, User Experience, Visual Design, Project Management, Team Leading</p>
-        </VerticalTimelineElement>
-      </VerticalTimeline>
-    </section>
+      <div className='relative'>
+        {/* middle separator. todo: left side for small screen */}
+        <Separator orientation='vertical' className='bg-muted absolute left-1/2' />
+        {EXPERIENCE.map((exp, index) => (
+          <div key={index} className={cn('relative flex', index % 2 == 1 && 'justify-end')}>
+            <div className='absolute left-1/2 -translate-1/2 top-1/2 w-12 h-12 rounded-full overflow-hidden'>
+              <Image src={exp.company_logo} alt={exp.company_name} />
+            </div>
+            <div className={cn('w-2/5', index % 2 == 1 ? 'mr-14' : 'ml-14')}>
+              <Card>
+                <CardHeader>
+                  <CardTitle>{exp.company_name}</CardTitle>
+                  <CardDescription>{exp.designation}</CardDescription>
+                  <CardAction>{exp.duration}</CardAction>
+                </CardHeader>
+                <CardContent>
+                  <p>{exp.workDescription}</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
   );
 }
