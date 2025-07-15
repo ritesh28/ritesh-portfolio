@@ -1,4 +1,4 @@
-import { ContactSection } from '@/components/contact';
+import { ContactSection } from '@/components/contact-section';
 import { ExperienceSection } from '@/components/experience';
 import { HeroSection } from '@/components/hero-section';
 import { HorizontalBar } from '@/components/horizontal-bar';
@@ -9,7 +9,7 @@ import { VerticalBar } from '@/components/vertical-bar';
 export default function Page() {
   return (
     <div>
-      <header className='w-12 fixed'>
+      <header className='w-12 fixed z-10'>
         <VerticalBar />
       </header>
       <div className='pl-12'>
