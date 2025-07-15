@@ -8,14 +8,12 @@ import { Button } from '@/components/ui/button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { useEmail } from '@/hooks/use-email';
 import { AlertCircleIcon, CheckCircle2Icon, Send } from 'lucide-react';
-import { useCallback, useState } from 'react';
 import { SiLinkedin } from 'react-icons/si';
 
 export function ContactSection() {
-  const [emailSuccessStatus, setEmailSuccessStatus] = useState<boolean | null>(false);
-  // const [emailSuccessStatus, setEmailSuccessStatus] = useState<boolean | null>(null);
-  const [isEmailInflight, setIsEmailInFlight] = useState<boolean>(false);
+  const { emailSuccessStatus, isEmailInflight, handleSubmit } = useEmail();
 
   const form = useForm<z.infer<typeof EmailTemplateSchema>>({
     resolver: zodResolver(EmailTemplateSchema),
@@ -26,36 +24,12 @@ export function ContactSection() {
     },
   });
 
-  const onSubmit = useCallback(async (data: z.infer<typeof EmailTemplateSchema>) => {
-    try {
-      setEmailSuccessStatus(null);
-      setIsEmailInFlight(true);
-      const response = await fetch('/api/email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-      setIsEmailInFlight(false);
-
-      if (response.status !== 200) {
-        setEmailSuccessStatus(false);
-      } else {
-        setEmailSuccessStatus(true);
-      }
-    } catch (error) {
-      setEmailSuccessStatus(false);
-      setIsEmailInFlight(false);
-    }
-  }, []);
-
   return (
     <>
       <h3 className='text-6xl leading-24 font-semibold flex items-center before:border-b-2 before:grow before:mr-6'>Contact</h3>
 
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-8'>
+        <form onSubmit={form.handleSubmit(handleSubmit)} className='space-y-8'>
           <FormField
             control={form.control}
             name='name'

@@ -5,8 +5,6 @@ import { Resend } from 'resend';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<null>) {
-  await new Promise((r) => setTimeout(r, 4000));
-  return res.status(400).end();
   try {
     const emailParse = EmailTemplateSchema.safeParse(req.body);
     if (!emailParse.success) {
