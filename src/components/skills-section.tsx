@@ -8,7 +8,7 @@ export function SkillsSection() {
       <h3 className='text-[clamp(2rem,1.4966rem+2.3973vw,3.75rem)] my-4 font-semibold flex items-center after:border-b-2 after:grow after:ml-5'>
         Skills
       </h3>
-      <div className='flex flex-col gap-4 [&>div>*]:mr-4'>
+      <div className='flex flex-col gap-4 [&>div>*]:mr-2'>
         <div>
           {FRONTEND_SKILL_GROUP.map((skill) => (
             <Badge key={skill.name} className={cn('[&>svg]:size-5 text-md', skill.featured && 'bg-orange-700')}>

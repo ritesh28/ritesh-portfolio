@@ -1,6 +1,8 @@
 import { Button } from '@/components/ui/button';
-import { ArrowUpRight } from 'lucide-react';
+import { Send } from 'lucide-react';
 import Image from 'next/image';
+import { FaFilePdf } from 'react-icons/fa';
+import { SiGithub, SiLinkedin } from 'react-icons/si';
 import MyDP from '../../public/ritesh_dp.png';
 
 export function HeroSection() {
@@ -18,21 +20,33 @@ export function HeroSection() {
           Python for AI engineering and Next.js/NestJS for building fast, scalable applications. I focus on integrating advanced AI models into
           real-world products that are both smart and user-friendly.
         </p>
-        <div className='flex flex-wrap items-start gap-5 lg:gap-7'>
+        <div className='flex flex-wrap items-start gap-3 lg:gap-5'>
           <Button asChild>
             <a href='#contact'>
               <div className='flex items-center gap-2'>
-                <ArrowUpRight className='size-4' />
+                <Send />
               </div>
-              <span className='pr-6 pl-4 text-sm whitespace-nowrap lg:pr-8 lg:pl-6 lg:text-base'>Contact Me</span>
+              <span className='pr-5 pl-3 text-sm whitespace-nowrap lg:text-base'>Contact Me</span>
             </a>
           </Button>
-          <Button asChild variant='link' className='underline'>
-            <a href='#'>Resume</a>
+          <Button variant='secondary' className='underline'>
+            <a href='#' className='flex items-center gap-2'>
+              <FaFilePdf /> <span className='text-sm whitespace-nowrap lg:text-base'>Resume</span>
+            </a>
           </Button>
+          <div className='md:hidden'>
+            <Button variant='link' className='underline'>
+              <SiLinkedin />
+            </Button>
+          </div>
+          <div className='md:hidden'>
+            <Button variant='link' className='underline'>
+              <SiGithub />
+            </Button>
+          </div>
         </div>
       </div>
-      <div className='relative z-10'>
+      <div>
         <Image src={MyDP} alt='my-pic' className='size-full object-cover object-[50%_0%]' />
       </div>
     </div>

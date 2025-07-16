@@ -11,19 +11,18 @@ export function ExperienceSection() {
         Experience
       </h3>
       <div className='relative'>
-        {/* middle separator. todo: left side for small screen */}
-        <Separator orientation='vertical' className='bg-muted absolute left-1/2' />
+        <Separator orientation='vertical' className='bg-muted absolute left-0 lg:left-1/2 hidden lg:block' />
         {EXPERIENCE.map((exp, index) => (
-          <div key={index} className={cn('relative flex', index % 2 == 1 && 'justify-end')}>
-            <div className='absolute left-1/2 -translate-1/2 top-1/2 w-12 h-12 rounded-full overflow-hidden'>
+          <div key={index} className={cn('relative flex mb-4', index % 2 == 1 && 'lg:justify-end')}>
+            <div className='absolute left-0 lg:left-1/2 -translate-1/2 top-1/2 w-12 h-12 rounded-full overflow-hidden hidden lg:block'>
               <Image src={exp.company_logo} alt={exp.company_name} />
             </div>
-            <div className={cn('w-2/5', index % 2 == 1 ? 'mr-14' : 'ml-14')}>
+            <div className={cn('w-full lg:w-2/5 lg:ml-14', index % 2 == 1 && 'lg:mr-14')}>
               <Card>
-                <CardHeader>
+                <CardHeader className='grid has-data-[slot=card-action]:grid-cols-1 md:has-data-[slot=card-action]:grid-cols-[1fr_auto]'>
                   <CardTitle>{exp.company_name}</CardTitle>
                   <CardDescription>{exp.designation}</CardDescription>
-                  <CardAction>{exp.duration}</CardAction>
+                  <CardAction className='col-start-1 md:col-start-2 row-start-3 md:row-start-1'>{exp.duration}</CardAction>
                 </CardHeader>
                 <CardContent>
                   <p>{exp.workDescription}</p>
