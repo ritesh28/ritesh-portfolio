@@ -26,7 +26,9 @@ export function ContactSection() {
 
   return (
     <>
-      <h3 className='text-6xl leading-24 font-semibold flex items-center before:border-b-2 before:grow before:mr-6'>Contact</h3>
+      <h3 className='text-[clamp(2rem,1.4966rem+2.3973vw,3.75rem)] my-4 font-semibold flex items-center before:border-b-2 before:grow before:mr-5'>
+        Contact
+      </h3>
 
       <Form {...form}>
         <form onSubmit={form.handleSubmit(handleSubmit)} className='space-y-8'>

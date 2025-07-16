@@ -10,7 +10,9 @@ import MyDP from '../../public/ritesh_dp.png';
 export function ProjectsSection() {
   return (
     <>
-      <h3 className='text-6xl leading-24 font-semibold flex items-center before:border-b-2 before:grow before:mr-6'>Projects</h3>
+      <h3 className='text-[clamp(2rem,1.4966rem+2.3973vw,3.75rem)] my-4 font-semibold flex items-center before:border-b-2 before:grow before:mr-5'>
+        Projects
+      </h3>
       <ul className='grid grid-cols-3'>
         <li>
           <Card className='flex flex-col gap-4'>

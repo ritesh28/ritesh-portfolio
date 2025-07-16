@@ -7,7 +7,9 @@ import Image from 'next/image';
 export function ExperienceSection() {
   return (
     <>
-      <h3 className='text-6xl leading-24 font-semibold flex items-center after:border-b-2 after:grow after:ml-6'>Experience</h3>
+      <h3 className='text-[clamp(2rem,1.4966rem+2.3973vw,3.75rem)] my-4 font-semibold flex items-center after:border-b-2 after:grow after:ml-5'>
+        Experience
+      </h3>
       <div className='relative'>
         {/* middle separator. todo: left side for small screen */}
         <Separator orientation='vertical' className='bg-muted absolute left-1/2' />
