@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Send } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { FaFilePdf } from 'react-icons/fa';
 import { SiGithub, SiLinkedin } from 'react-icons/si';
 import MyDP from '../../public/ritesh_dp.png';
@@ -21,29 +22,24 @@ export function HeroSection() {
           real-world products that are both smart and user-friendly.
         </p>
         <div className='flex flex-wrap items-start gap-3 lg:gap-5'>
-          <Button asChild>
-            <a href='#contact'>
-              <div className='flex items-center gap-2'>
-                <Send />
-              </div>
-              <span className='pr-5 pl-3 text-sm whitespace-nowrap lg:text-base'>Contact Me</span>
-            </a>
+          <Button>
+            <Link href='#contact' className='flex items-center gap-2'>
+              <Send /> <span className='pr-5 pl-3 text-sm whitespace-nowrap lg:text-base'>Contact Me</span>
+            </Link>
           </Button>
           <Button variant='secondary' className='underline'>
-            <a href='#' className='flex items-center gap-2'>
+            <a href={process.env.NEXT_PUBLIC_RESUME} target='_blank' className='flex items-center gap-2'>
               <FaFilePdf /> <span className='text-sm whitespace-nowrap lg:text-base'>Resume</span>
             </a>
           </Button>
-          <div className='md:hidden'>
-            <Button variant='link' className='underline'>
-              <SiLinkedin />
-            </Button>
-          </div>
-          <div className='md:hidden'>
-            <Button variant='link' className='underline'>
-              <SiGithub />
-            </Button>
-          </div>
+        </div>
+        <div className='md:hidden flex flex-wrap gap-3 text-2xl -mt-2'>
+          <a href={process.env.NEXT_PUBLIC_GITHUB_REPO_LINK} target='_blank'>
+            <SiGithub />
+          </a>
+          <a href={process.env.NEXT_PUBLIC_LINKEDIN_LINK} target='_blank'>
+            <SiLinkedin />
+          </a>
         </div>
       </div>
       <div>

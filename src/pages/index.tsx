@@ -7,14 +7,20 @@ import { SkillsSection } from '@/components/skills-section';
 import { Theme } from '@/components/theme';
 import { Button } from '@/components/ui/button';
 import { VerticalBar } from '@/components/vertical-bar';
+import { useState } from 'react';
 import { FaFilePdf } from 'react-icons/fa';
 import { SiGithub, SiLinkedin } from 'react-icons/si';
+import { InView } from 'react-intersection-observer';
+
+export const TABS = ['skills', 'projects', 'experience', 'contact'] as const;
 
 export default function Page() {
+  const [activeTab, setActiveTab] = useState<(typeof TABS)[number] | null>(null);
+
   return (
     <div>
       <header className='hidden md:block md:w-12 fixed z-10'>
-        <VerticalBar />
+        <VerticalBar activeTab={activeTab} />
       </header>
       <div className='pl-0 md:pl-12'>
         {/* padding left should be more than the width of the fixed vertical bar */}
@@ -26,21 +32,56 @@ export default function Page() {
             {/* padding top should be more than the height of the fixed horizontal bar */}
             <div className='container mx-auto'>
               {/* center flow layout content - container */}
-              <section className='mb-4 p-8'>
+              <InView
+                as='section'
+                id={TABS['0']}
+                threshold={0}
+                rootMargin='-40%'
+                onChange={(inView, _) => inView && setActiveTab(null)}
+                className='mb-4 p-8'
+              >
                 <HeroSection />
-              </section>
-              <section id='skills' className='mb-4 p-8'>
+              </InView>
+              <InView
+                as='section'
+                id={TABS['0']}
+                threshold={0}
+                rootMargin='-40%'
+                onChange={(inView, _) => inView && setActiveTab(TABS['0'])}
+                className='mb-4 p-8'
+              >
                 <SkillsSection />
-              </section>
-              <section id='projects' className='mb-4 p-8'>
+              </InView>
+              <InView
+                as='section'
+                id={TABS['1']}
+                threshold={0}
+                rootMargin='-40%'
+                onChange={(inView, _) => inView && setActiveTab(TABS['1'])}
+                className='mb-4 p-8'
+              >
                 <ProjectsSection />
-              </section>
-              <section id='experience' className='mb-4 p-8'>
+              </InView>
+              <InView
+                as='section'
+                id={TABS['2']}
+                threshold={0}
+                rootMargin='-40%'
+                onChange={(inView, _) => inView && setActiveTab(TABS['2'])}
+                className='mb-4 p-8'
+              >
                 <ExperienceSection />
-              </section>
-              <section id='contact' className='mb-4 p-8'>
+              </InView>
+              <InView
+                as='section'
+                id={TABS['3']}
+                threshold={0}
+                rootMargin='-40%'
+                onChange={(inView, _) => inView && setActiveTab(TABS['3'])}
+                className='mb-4 p-8'
+              >
                 <ContactSection />
-              </section>
+              </InView>
             </div>
           </div>
         </main>
@@ -50,17 +91,17 @@ export default function Page() {
             {/* center flow layout content - container */}
             <div className='grid grid-cols-2 sm:grid-cols-4 place-content-center my-5'>
               <Button variant='link'>
-                <a href='#' className='flex gap-1'>
+                <a href={process.env.NEXT_PUBLIC_RESUME} target='_blank' className='flex gap-1'>
                   <FaFilePdf /> Resume
                 </a>
               </Button>
               <Button variant='link'>
-                <a href='#' className='flex gap-1'>
+                <a href={process.env.NEXT_PUBLIC_LINKEDIN_LINK} target='_blank' className='flex gap-1'>
                   <SiLinkedin /> LinkedIn
                 </a>
               </Button>
               <Button variant='link'>
-                <a href='#' className='flex gap-1'>
+                <a href={process.env.NEXT_PUBLIC_GITHUB_REPO_LINK} target='_blank' className='flex gap-1'>
                   <SiGithub /> Github
                 </a>
               </Button>
