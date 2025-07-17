@@ -43,7 +43,7 @@ export function HeroSection() {
         </div>
       </div>
       <div>
-        <Image src={MyDP} alt='my-pic' className='size-full object-cover object-[50%_0%]' />
+        <Image src={MyDP} alt='my-pic' priority className='size-full object-cover object-[50%_0%]' />
       </div>
     </div>
   );

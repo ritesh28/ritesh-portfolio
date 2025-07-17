@@ -1,7 +1,7 @@
 import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { cn } from '@/lib/utils';
-import { EXPERIENCE } from '@/models';
+import { EXPERIENCES } from '@/models';
 import Image from 'next/image';
 
 export function ExperienceSection() {
@@ -12,7 +12,7 @@ export function ExperienceSection() {
       </h3>
       <div className='relative'>
         <Separator orientation='vertical' className='bg-muted absolute left-0 lg:left-1/2 hidden lg:block' />
-        {EXPERIENCE.map((exp, index) => (
+        {EXPERIENCES.map((exp, index) => (
           <div key={index} className={cn('relative flex mb-4', index % 2 == 1 && 'lg:justify-end')}>
             <div className='absolute left-0 lg:left-1/2 -translate-1/2 top-1/2 w-12 h-12 rounded-full overflow-hidden hidden lg:block'>
               <Image src={exp.company_logo} alt={exp.company_name} />

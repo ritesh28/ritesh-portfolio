@@ -11,7 +11,6 @@ export function Theme() {
       type='single'
       variant='outline'
       size='sm'
-      value={theme}
       onValueChange={(value) => {
         if (value) setTheme(value);
       }}

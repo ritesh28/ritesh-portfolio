@@ -33,12 +33,13 @@ interface Experience {
   workDescription: string;
 }
 
-export const EXPERIENCE: Experience[] = [
+export const EXPERIENCES: Experience[] = [
   {
     company_name: 'Infosys',
     company_logo: Infosys,
-    duration: '2015 - 2022',
+    duration: '2015 - 2022', // todo
     designation: 'Technical Lead',
+    //todo
     workDescription:
       'I help build and scale Google Photos. Increased throughput of our primary services by 70%. Migrated backend service from Java to Go. Also helped make it look prettier.',
   },
@@ -51,3 +52,37 @@ export const EXPERIENCE: Experience[] = [
       'I help build and scale Google Photos. Increased throughput of our primary services by 70%. Migrated backend service from Java to Go. Also helped make it look prettier.',
   },
 ];
+
+interface Project {
+  /**
+   * uuid v4 - https://www.uuidgenerator.net/
+   */
+  id: string;
+  title: string;
+  small_description: string;
+  /**
+   * Make sure min 5 and max 8 projects are marked 'featured'
+   */
+  featured: boolean;
+  github_repo_name: string;
+  github_main_image: string;
+  demo_link: string | null;
+  /**
+   * top ... least hot-skill
+   * e.g. nextjs, front-end, ts
+   */
+  tools: string[];
+}
+export const PROJECTS: Record<string, Project> = {
+  '12987f59-1dc2-4df8-9119-a04ebca76061': {
+    id: '12987f59-1dc2-4df8-9119-a04ebca76061',
+    title: 'Motion Framer Animation',
+    small_description:
+      'This website showcases the capabilities of the Framer Motion library in React. It features interactive examples and animations that demonstrate key concepts like transitions, gestures, and layout animations.',
+    featured: true,
+    github_repo_name: 'animation-next',
+    github_main_image: 'page_home.png',
+    demo_link: 'https://animation-next-lemon.vercel.app',
+    tools: ['Motion', 'Front-End', 'TS'],
+  },
+};

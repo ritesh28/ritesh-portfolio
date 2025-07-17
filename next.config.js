@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    remotePatterns: [new URL('https://placehold.co/**')], //todo: remove later
+    remotePatterns: [new URL('https://raw.githubusercontent.com/ritesh28/**')],
   },
 };
 
