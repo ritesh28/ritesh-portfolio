@@ -30,7 +30,8 @@ export default function ProjectsPage({ mdxSource }: InferGetServerSidePropsType<
   }
   return (
     <div className='prose dark:prose-invert'>
-      <MDXClient {...mdxSource} />
+      {/* todo: look into 'compiledSource' */}
+      <MDXClient compiledSource='' {...mdxSource} />
     </div>
   );
 }
