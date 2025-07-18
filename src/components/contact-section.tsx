@@ -100,7 +100,7 @@ export function ContactSection() {
                 <AlertDescription>I&apos;ll reach out at the earliest. Please check out my side projects.</AlertDescription>
               </Alert>
             )}
-            <Button type='submit' disabled={isEmailInflight} className='lg:self-end'>
+            <Button type='submit' disabled={isEmailInflight} className='lg:self-end cursor-pointer'>
               <Send />
               {isEmailInflight ? 'Sending...' : 'Send'}
             </Button>

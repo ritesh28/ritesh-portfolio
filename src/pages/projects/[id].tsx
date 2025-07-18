@@ -1,11 +1,29 @@
-import { PROJECTS } from '@/models';
-import { GetServerSideProps, GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
+import { HorizontalBar } from '@/components/horizontal-bar';
+import { Button } from '@/components/ui/button';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { PROJECTS, Project } from '@/models';
+import { Plus } from 'lucide-react';
+import { GetStaticProps, GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 import { MDXClient } from 'next-mdx-remote-client';
 import { serialize, type SerializeResult } from 'next-mdx-remote-client/serialize';
+import Link from 'next/link';
+import { FaExternalLinkAlt, FaHome } from 'react-icons/fa';
+import { SiGithub } from 'react-icons/si';
 
-export const getServerSideProps = (async ({ params }: GetServerSidePropsContext) => {
+export function getStaticPaths() {
+  const paths = Object.keys(PROJECTS).map((projectId) => ({
+    params: { id: projectId },
+  }));
+
+  // We'll pre-render only these paths at build time.
+  // { fallback: false } means other routes should 404.
+  return { paths, fallback: false };
+}
+
+export const getStaticProps = (async ({ params }: GetStaticPropsContext) => {
   const { id: projectId } = params;
 
+  // this if block is not needed since `fallback` is set to false in `getStaticPaths`
   if (projectId instanceof Array || !(projectId in PROJECTS)) {
     return {
       notFound: true,
@@ -26,18 +44,61 @@ export const getServerSideProps = (async ({ params }: GetServerSidePropsContext)
   return {
     props: {
       mdxSource,
+      project,
     },
   };
-}) satisfies GetServerSideProps<{ mdxSource: SerializeResult }>;
+}) satisfies GetStaticProps<{ mdxSource: SerializeResult; project: Project }>;
 
-export default function ProjectsPage({ mdxSource }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+export default function ProjectsPage({ mdxSource, project }: InferGetStaticPropsType<typeof getStaticProps>) {
   if ('error' in mdxSource) {
     // either render error UI or throw `mdxSource.error`
   }
   return (
-    <div className='prose dark:prose-invert'>
-      {/* todo: look into 'compiledSource' */}
-      <MDXClient compiledSource='' {...mdxSource} />
-    </div>
+    <>
+      <div className='h-16 fixed w-full pl-6 pr-6 md:pr-16 z-10 bg-sidebar/40 backdrop-blur-xs shadow-xs'>
+        {/* copied from index.tsx */}
+        <HorizontalBar showLogoWhenMD />
+      </div>
+      <div className='pt-18'>
+        {/* padding top should be more than the height of the fixed horizontal bar */}
+        <div className='relative container mx-auto'>
+          <div className='prose dark:prose-invert'>
+            <MDXClient compiledSource='' {...mdxSource} />
+            {/* todo: look into 'compiledSource' */}
+          </div>
+          <div className='fixed bottom-[2rem] right-[2rem]'>
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button className='h-[4rem] w-[4rem] rounded-full'>
+                  <Plus className='size-8' />
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className='w-fit'>
+                <div className='flex flex-col items-center justify-center gap-4'>
+                  <Link href='/'>
+                    <Button className='flex items-center gap-2 cursor-pointer'>
+                      <FaHome />
+                      Home
+                    </Button>
+                  </Link>
+                  <a href={`${process.env.NEXT_PUBLIC_GITHUB_REPO_LINK}/${project.github_repo_name}`} target='_blank'>
+                    <Button className='flex items-center gap-2 cursor-pointer'>
+                      <SiGithub /> Github
+                    </Button>
+                  </a>
+                  {project.demo_link && (
+                    <a href={project.demo_link} target='_blank'>
+                      <Button className='flex items-center gap-2 cursor-pointer'>
+                        <FaExternalLinkAlt /> Demo
+                      </Button>
+                    </a>
+                  )}
+                </div>
+              </PopoverContent>
+            </Popover>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }

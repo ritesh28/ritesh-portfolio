@@ -25,7 +25,7 @@ export default function Page() {
       <div className='pl-0 md:pl-12'>
         {/* padding left should be more than the width of the fixed vertical bar */}
         <main>
-          <div className='h-16 fixed w-full pl-6 pr-6 md:pr-16 z-10 bg-sidebar/40 backdrop-blur-xs'>
+          <div className='h-16 fixed w-full pl-6 pr-6 md:pr-16 z-10 bg-sidebar/40 backdrop-blur-xs shadow-xs'>
             <HorizontalBar />
           </div>
           <div className='pt-16'>
@@ -90,21 +90,21 @@ export default function Page() {
             <hr />
             {/* center flow layout content - container */}
             <div className='grid grid-cols-2 sm:grid-cols-4 place-content-center my-5'>
-              <Button variant='link'>
-                <a href={process.env.NEXT_PUBLIC_RESUME} target='_blank' className='flex gap-1'>
+              <a href={process.env.NEXT_PUBLIC_RESUME} target='_blank'>
+                <Button variant='link' className='flex gap-2 cursor-pointer'>
                   <FaFilePdf /> Resume
-                </a>
-              </Button>
-              <Button variant='link'>
-                <a href={process.env.NEXT_PUBLIC_LINKEDIN_LINK} target='_blank' className='flex gap-1'>
+                </Button>
+              </a>
+              <a href={process.env.NEXT_PUBLIC_LINKEDIN_LINK} target='_blank'>
+                <Button variant='link' className='flex gap-2 cursor-pointer'>
                   <SiLinkedin /> LinkedIn
-                </a>
-              </Button>
-              <Button variant='link'>
-                <a href={process.env.NEXT_PUBLIC_GITHUB_REPO_LINK} target='_blank' className='flex gap-1'>
+                </Button>
+              </a>
+              <a href={process.env.NEXT_PUBLIC_GITHUB_REPO_LINK} target='_blank'>
+                <Button variant='link' className='flex gap-2 cursor-pointer'>
                   <SiGithub /> Github
-                </a>
-              </Button>
+                </Button>
+              </a>
               <div className='m-auto'>
                 <Theme />
               </div>

@@ -53,7 +53,7 @@ export const EXPERIENCES: Experience[] = [
   },
 ];
 
-interface Project {
+export interface Project {
   /**
    * uuid v4 - https://www.uuidgenerator.net/
    */

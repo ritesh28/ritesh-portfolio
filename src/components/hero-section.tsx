@@ -22,16 +22,16 @@ export function HeroSection() {
           real-world products that are both smart and user-friendly.
         </p>
         <div className='flex flex-wrap items-start gap-3 lg:gap-5'>
-          <Button>
-            <Link href='#contact' className='flex items-center gap-2'>
+          <Link href='#contact'>
+            <Button className='flex items-center gap-2 cursor-pointer'>
               <Send /> <span className='pr-5 pl-3 text-sm whitespace-nowrap lg:text-base'>Contact Me</span>
-            </Link>
-          </Button>
-          <Button variant='secondary' className='underline'>
-            <a href={process.env.NEXT_PUBLIC_RESUME} target='_blank' className='flex items-center gap-2'>
+            </Button>
+          </Link>
+          <a href={process.env.NEXT_PUBLIC_RESUME} target='_blank'>
+            <Button variant='secondary' className='underline flex items-center gap-2 cursor-pointer'>
               <FaFilePdf /> <span className='text-sm whitespace-nowrap lg:text-base'>Resume</span>
-            </a>
-          </Button>
+            </Button>
+          </a>
         </div>
         <div className='md:hidden flex flex-wrap gap-3 text-2xl -mt-2'>
           <a href={process.env.NEXT_PUBLIC_GITHUB_REPO_LINK} target='_blank'>
