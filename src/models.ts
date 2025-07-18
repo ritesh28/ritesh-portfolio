@@ -65,7 +65,7 @@ export interface Project {
    */
   featured: boolean;
   github_repo_name: string;
-  github_main_image: string;
+  github_image_path: string;
   demo_link: string | null;
   /**
    * top ... least hot-skill
@@ -81,8 +81,19 @@ export const PROJECTS: Record<string, Project> = {
       'This website showcases the capabilities of the Framer Motion library in React. It features interactive examples and animations that demonstrate key concepts like transitions, gestures, and layout animations.',
     featured: true,
     github_repo_name: 'animation-next',
-    github_main_image: 'page_home.png',
+    github_image_path: 'public/page_home.png',
     demo_link: 'https://animation-next-lemon.vercel.app',
     tools: ['Motion', 'Front-End', 'TS'],
+  },
+  '57d94d05-b100-413f-af2b-3214d12980ec': {
+    id: '57d94d05-b100-413f-af2b-3214d12980ec',
+    title: 'Design Patterns',
+    small_description:
+      'This project showcases all 23 Gang of Four (GoF) software design patterns implemented in JavaScript. It serves as a comprehensive reference for understanding and applying design principles in real-world development.',
+    featured: true,
+    github_repo_name: 'design-pattern-js',
+    github_image_path: 'Design%20Patterns.png',
+    demo_link: null,
+    tools: ['Design Pattern', 'Dev Enabler', 'Programming', 'JS'],
   },
 };

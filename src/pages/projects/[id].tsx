@@ -1,7 +1,9 @@
 import { HorizontalBar } from '@/components/horizontal-bar';
 import { Button } from '@/components/ui/button';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import aLinks from '@/lib/remark-anchor-links';
 import { PROJECTS, Project } from '@/models';
+import imgLinks from '@pondorasti/remark-img-links';
 import { Plus } from 'lucide-react';
 import { GetStaticProps, GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 import { MDXClient } from 'next-mdx-remote-client';
@@ -9,6 +11,7 @@ import { serialize, type SerializeResult } from 'next-mdx-remote-client/serializ
 import Link from 'next/link';
 import { FaExternalLinkAlt, FaHome } from 'react-icons/fa';
 import { SiGithub } from 'react-icons/si';
+import remarkGfm from 'remark-gfm';
 
 export function getStaticPaths() {
   const paths = Object.keys(PROJECTS).map((projectId) => ({
@@ -39,8 +42,16 @@ export const getStaticProps = (async ({ params }: GetStaticPropsContext) => {
       'X-GitHub-Api-Version': '2022-11-28',
     },
   });
+
+  const imageAbsolutePath = `${process.env.NEXT_PUBLIC_GITHUB_RAW_REPO_LINK}/${project.github_repo_name}/refs/heads/main/`;
+  const linkAbsolutePath = `${process.env.NEXT_PUBLIC_GITHUB_REPO_LINK}/${project.github_repo_name}/tree/main/`;
   const mdxText = await res.text();
-  const mdxSource = await serialize({ source: mdxText });
+  const mdxSource = await serialize({
+    source: mdxText,
+    options: {
+      mdxOptions: { remarkPlugins: [remarkGfm, [imgLinks, { absolutePath: imageAbsolutePath }], [aLinks, { absolutePath: linkAbsolutePath }]] },
+    },
+  });
   return {
     props: {
       mdxSource,
@@ -62,7 +73,7 @@ export default function ProjectsPage({ mdxSource, project }: InferGetStaticProps
       <div className='pt-18'>
         {/* padding top should be more than the height of the fixed horizontal bar */}
         <div className='relative container mx-auto'>
-          <div className='prose dark:prose-invert'>
+          <div className='prose dark:prose-invert max-w-full'>
             <MDXClient compiledSource='' {...mdxSource} />
             {/* todo: look into 'compiledSource' */}
           </div>
