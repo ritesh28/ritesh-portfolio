@@ -29,7 +29,9 @@ export function ProjectsSection() {
                 <Link href={`/projects/${project.id}`}>
                   <AspectRatio ratio={4064 / 2334} className='bg-muted rounded-lg overflow-hidden'>
                     <Image
-                      src={`${process.env.NEXT_PUBLIC_GITHUB_RAW_REPO_LINK}/${project.github_repo_name}/refs/heads/main/public/${project.github_main_image}`}
+                      src='https://raw.githubusercontent.com/ritesh28/animation-next/main/public/page_home.png'
+                      // todo
+                      // src={`${process.env.NEXT_PUBLIC_GITHUB_RAW_REPO_LINK}/${project.github_repo_name}/refs/heads/main/public/${project.github_main_image}`}
                       width={580}
                       height={333}
                       alt='project-image'
