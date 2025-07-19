@@ -1,19 +1,30 @@
+import { AnimateSvgPath } from '@/components/animate-svg-path';
 import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { cn } from '@/lib/utils';
 import { EXPERIENCES } from '@/models';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 export function ExperienceSection() {
   return (
     <>
       <h3 className='text-[clamp(2rem,1.4966rem+2.3973vw,3.75rem)] my-4 font-semibold flex items-center after:border-b-2 after:grow after:ml-5'>
-        Experience
+        <span className='relative'>
+          Experience <AnimateSvgPath className='-bottom-16' />
+        </span>
       </h3>
       <div className='relative'>
         <Separator orientation='vertical' className='bg-muted absolute left-0 lg:left-1/2 hidden lg:block' />
         {EXPERIENCES.map((exp, index) => (
-          <div key={index} className={cn('relative flex mb-4', index % 2 == 1 && 'lg:justify-end')}>
+          <motion.div
+            key={index}
+            className={cn('relative flex mb-4', index % 2 == 1 && 'lg:justify-end')}
+            initial={{ y: 100 }}
+            whileInView={{ y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             <div className='absolute left-0 lg:left-1/2 -translate-1/2 top-1/2 w-12 h-12 rounded-full overflow-hidden hidden lg:block'>
               <Image src={exp.company_logo} alt={exp.company_name} />
             </div>
@@ -29,7 +40,7 @@ export function ExperienceSection() {
                 </CardContent>
               </Card>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </>
