@@ -29,7 +29,7 @@ export function ContactSection() {
       <h3 className='text-[clamp(2rem,1.4966rem+2.3973vw,3.75rem)] my-4 font-semibold flex items-center before:border-b-2 before:grow before:mr-5'>
         Contact
       </h3>
-      <div className='max-w-5xl mx-auto'>
+      <div className='max-w-5xl mx-auto relative'>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(handleSubmit)} className='flex flex-col gap-8'>
             <FormField

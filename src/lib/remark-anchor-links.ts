@@ -7,7 +7,7 @@ interface Options {
   absolutePath?: string;
 }
 
-export default function (options?: Options) {
+export function aLinks(options?: Options) {
   function visitor(node: Link) {
     // Sanitize URL by removing leading `/`
     const relativeUrl = node.url.replace(/^\//, '');

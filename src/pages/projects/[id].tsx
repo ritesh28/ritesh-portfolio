@@ -2,7 +2,7 @@ import { HeadComponent } from '@/components/head';
 import { HorizontalBar } from '@/components/horizontal-bar';
 import { Button } from '@/components/ui/button';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
-import aLinks from '@/lib/remark-anchor-links';
+import { aLinks } from '@/lib/remark-anchor-links';
 import { PROJECTS, Project } from '@/models';
 import imgLinks from '@pondorasti/remark-img-links';
 import { Ellipsis, ExternalLink, House } from 'lucide-react';
@@ -81,7 +81,7 @@ export default function ProjectsPage({ mdxSource, project }: InferGetStaticProps
       <div className='pt-18'>
         {/* padding top should be more than the height of the fixed horizontal bar */}
         <div className='relative container mx-auto'>
-          <div className='prose dark:prose-invert max-w-full'>
+          <div className='prose dark:prose-invert max-w-full px-4'>
             <MDXClient compiledSource='' {...mdxSource} />
             {/* todo: look into 'compiledSource' */}
           </div>

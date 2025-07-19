@@ -1,3 +1,4 @@
+import { ColorChange } from '@/components/color-change';
 import { ContactSection } from '@/components/contact-section';
 import { ExperienceSection } from '@/components/experience';
 import { HeadComponent } from '@/components/head';
@@ -29,7 +30,8 @@ export default function Page() {
   return (
     <>
       <HeadComponent {...headContent} />
-      <div>
+      <div className='relative'>
+        <ColorChange />
         <header className='hidden md:block md:w-12 fixed z-10'>
           <VerticalBar activeTab={activeTab} />
         </header>
@@ -97,10 +99,10 @@ export default function Page() {
             </div>
           </main>
           <footer>
-            <div className='container mx-auto'>
+            <div className='container mx-auto relative'>
               <hr />
               {/* center flow layout content - container */}
-              <div className='grid grid-cols-2 sm:grid-cols-4 place-content-center my-5'>
+              <div className='grid grid-cols-2 sm:grid-cols-4 place-content-center py-5'>
                 <a href={process.env.NEXT_PUBLIC_RESUME} target='_blank'>
                   <Button variant='link' className='flex gap-2 cursor-pointer'>
                     <FileText /> Resume

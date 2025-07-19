@@ -9,6 +9,7 @@ export const ImageWithFallback = ({ src, fallbackSrc, ...rest }: ImageWithFallba
   const [imgSrc, setImgSrc] = useState(src);
 
   return (
+    // eslint-disable-next-line jsx-a11y/alt-text
     <Image
       {...rest}
       src={imgSrc}
