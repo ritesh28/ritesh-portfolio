@@ -4,9 +4,8 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Project } from '@/models';
-import { Star } from 'lucide-react';
+import { ExternalLink, Star } from 'lucide-react';
 import Link from 'next/link';
-import { FaExternalLinkAlt } from 'react-icons/fa';
 import { SiGithub } from 'react-icons/si';
 
 interface ProjectCardVerticalProps {
@@ -53,7 +52,7 @@ export function ProjectCardVertical({ project, showFeaturedBadge = false }: Proj
           {project.demo_link && (
             <a href={project.demo_link} target='_blank'>
               <Button className='flex items-center gap-2 cursor-pointer'>
-                <FaExternalLinkAlt /> Demo
+                <ExternalLink /> Demo
               </Button>
             </a>
           )}

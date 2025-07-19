@@ -1,17 +1,24 @@
+import { HeadComponent } from '@/components/head';
 import { HorizontalBar } from '@/components/horizontal-bar';
 import { Button } from '@/components/ui/button';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import aLinks from '@/lib/remark-anchor-links';
 import { PROJECTS, Project } from '@/models';
 import imgLinks from '@pondorasti/remark-img-links';
-import { Plus } from 'lucide-react';
+import { Ellipsis, ExternalLink, House } from 'lucide-react';
 import { GetStaticProps, GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 import { MDXClient } from 'next-mdx-remote-client';
 import { serialize, type SerializeResult } from 'next-mdx-remote-client/serialize';
 import Link from 'next/link';
-import { FaExternalLinkAlt, FaHome } from 'react-icons/fa';
 import { SiGithub } from 'react-icons/si';
 import remarkGfm from 'remark-gfm';
+
+const headContent = (project: Project) => ({
+  title: `${project.title} | Ritesh Raj`,
+  description: `${project.small_description} Build by Ritesh Raj.`,
+  img: `${process.env.NEXT_PUBLIC_GITHUB_RAW_REPO_LINK}/${project.github_repo_name}/refs/heads/main/${project.github_image_path}`,
+  keywords: ['ritesh raj', 'portfolio', 'full stack developer', 'generative AI engineer', project.title, ...project.tools, 'github'],
+});
 
 export function getStaticPaths() {
   const paths = Object.keys(PROJECTS).map((projectId) => ({
@@ -66,6 +73,7 @@ export default function ProjectsPage({ mdxSource, project }: InferGetStaticProps
   }
   return (
     <>
+      <HeadComponent {...headContent(project)} />
       <div className='h-16 fixed w-full pl-6 pr-6 md:pr-16 z-10 bg-sidebar/40 backdrop-blur-xs shadow-xs'>
         {/* copied from index.tsx */}
         <HorizontalBar showLogoWhenMD />
@@ -81,14 +89,14 @@ export default function ProjectsPage({ mdxSource, project }: InferGetStaticProps
             <Popover>
               <PopoverTrigger asChild>
                 <Button className='h-[4rem] w-[4rem] rounded-full'>
-                  <Plus className='size-8' />
+                  <Ellipsis className='size-8' />
                 </Button>
               </PopoverTrigger>
               <PopoverContent className='w-fit'>
                 <div className='flex flex-col items-center justify-center gap-4'>
                   <Link href='/'>
                     <Button className='flex items-center gap-2 cursor-pointer'>
-                      <FaHome />
+                      <House />
                       Home
                     </Button>
                   </Link>
@@ -100,7 +108,7 @@ export default function ProjectsPage({ mdxSource, project }: InferGetStaticProps
                   {project.demo_link && (
                     <a href={project.demo_link} target='_blank'>
                       <Button className='flex items-center gap-2 cursor-pointer'>
-                        <FaExternalLinkAlt /> Demo
+                        <ExternalLink /> Demo
                       </Button>
                     </a>
                   )}

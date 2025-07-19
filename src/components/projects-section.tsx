@@ -1,8 +1,8 @@
 import { ProjectCardVertical } from '@/components/project-card-vertical';
 import { Button } from '@/components/ui/button';
 import { PROJECTS } from '@/models';
+import { Kanban } from 'lucide-react';
 import Link from 'next/link';
-import { AiFillProject } from 'react-icons/ai';
 
 export function ProjectsSection() {
   return (
@@ -12,8 +12,8 @@ export function ProjectsSection() {
       </h3>
       <Link href='/projects'>
         <Button className='mb-3 px-8 py-7 cursor-pointer'>
-          <div className='flex items-center gap-4'>
-            <AiFillProject />
+          <div className='flex items-center gap-2 text-lg'>
+            <Kanban className='size-5' />
             More Projects
           </div>
         </Button>

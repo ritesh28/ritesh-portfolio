@@ -1,8 +1,7 @@
 import { Button } from '@/components/ui/button';
-import { Send } from 'lucide-react';
+import { FileText, SendHorizonal } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaFilePdf } from 'react-icons/fa';
 import { SiGithub, SiLinkedin } from 'react-icons/si';
 import MyDP from '../../public/ritesh_dp.png';
 
@@ -23,13 +22,13 @@ export function HeroSection() {
         </p>
         <div className='flex flex-wrap items-start gap-3 lg:gap-5'>
           <Link href='#contact'>
-            <Button className='flex items-center gap-2 cursor-pointer'>
-              <Send /> <span className='pr-5 pl-3 text-sm whitespace-nowrap lg:text-base'>Contact Me</span>
+            <Button size='lg' className='flex items-center gap-2 cursor-pointer'>
+              <SendHorizonal /> <span className='whitespace-nowrap'>Contact Me</span>
             </Button>
           </Link>
           <a href={process.env.NEXT_PUBLIC_RESUME} target='_blank'>
-            <Button variant='secondary' className='underline flex items-center gap-2 cursor-pointer'>
-              <FaFilePdf /> <span className='text-sm whitespace-nowrap lg:text-base'>Resume</span>
+            <Button size='lg' variant='secondary' className='underline flex items-center gap-2 cursor-pointer'>
+              <FileText /> <span className='whitespace-nowrap'>Resume</span>
             </Button>
           </a>
         </div>
