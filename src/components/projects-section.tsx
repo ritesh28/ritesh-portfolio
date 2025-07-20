@@ -28,11 +28,18 @@ export function ProjectsSection() {
           </AnimateButtonVariant>
         </Link>
       </div>
-      <ul className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3'>
+      <ul className='flex flex-wrap gap-5'>
         {Object.values(PROJECTS)
           .filter((project) => project.featured)
           .map((project) => (
-            <motion.li key={project.id} initial={{ y: 100 }} whileInView={{ y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
+            <motion.li
+              key={project.id}
+              initial={{ y: 100 }}
+              whileInView={{ y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className='basis-[24rem]'
+            >
               <ProjectCard project={project} />
             </motion.li>
           ))}

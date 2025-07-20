@@ -1,3 +1,4 @@
+import { AnimateButtonVariant } from '@/components/animate-button-variant';
 import { HeadComponent } from '@/components/head';
 import { HorizontalBar } from '@/components/horizontal-bar';
 import { Button } from '@/components/ui/button';
@@ -5,7 +6,7 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { aLinks } from '@/lib/remark-anchor-links';
 import { PROJECTS, Project } from '@/models';
 import imgLinks from '@pondorasti/remark-img-links';
-import { Ellipsis, ExternalLink, House } from 'lucide-react';
+import { Ellipsis, ExternalLink, House, Kanban } from 'lucide-react';
 import { GetStaticProps, GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 import { MDXClient } from 'next-mdx-remote-client';
 import { serialize, type SerializeResult } from 'next-mdx-remote-client/serialize';
@@ -68,9 +69,6 @@ export const getStaticProps = (async ({ params }: GetStaticPropsContext) => {
 }) satisfies GetStaticProps<{ mdxSource: SerializeResult; project: Project }>;
 
 export default function ProjectsPage({ mdxSource, project }: InferGetStaticPropsType<typeof getStaticProps>) {
-  if ('error' in mdxSource) {
-    // either render error UI or throw `mdxSource.error`
-  }
   return (
     <>
       <HeadComponent {...headContent(project)} />
@@ -82,8 +80,16 @@ export default function ProjectsPage({ mdxSource, project }: InferGetStaticProps
         {/* padding top should be more than the height of the fixed horizontal bar */}
         <div className='relative container mx-auto'>
           <div className='prose dark:prose-invert max-w-full px-4'>
-            <MDXClient compiledSource='' {...mdxSource} />
-            {/* todo: look into 'compiledSource' */}
+            {'error' in mdxSource ? (
+              <div>
+                <p>Oops — Something Went Wrong</p>
+                <p>An unexpected error has occurred. The issue is being looked into, and steps are being taken to resolve it as soon as possible.</p>
+                <p>Apologies for the inconvenience, and thanks for your patience.</p>
+              </div>
+            ) : (
+              <MDXClient compiledSource='' {...mdxSource} />
+              // todo: look into 'compiledSource'
+            )}
           </div>
           <div className='fixed bottom-[2rem] right-[2rem]'>
             <Popover>
@@ -95,21 +101,35 @@ export default function ProjectsPage({ mdxSource, project }: InferGetStaticProps
               <PopoverContent className='w-fit'>
                 <div className='flex flex-col items-center justify-center gap-4'>
                   <Link href='/'>
-                    <Button className='flex items-center gap-2 cursor-pointer'>
-                      <House />
-                      Home
-                    </Button>
+                    <AnimateButtonVariant>
+                      <Button className='flex items-center gap-2 cursor-pointer'>
+                        <House />
+                        Home
+                      </Button>
+                    </AnimateButtonVariant>
+                  </Link>
+                  <Link href='/projects'>
+                    <AnimateButtonVariant>
+                      <Button className='flex items-center gap-2 cursor-pointer'>
+                        <Kanban />
+                        More Projects
+                      </Button>
+                    </AnimateButtonVariant>
                   </Link>
                   <a href={`${process.env.NEXT_PUBLIC_GITHUB_REPO_LINK}/${project.github_repo_name}`} target='_blank'>
-                    <Button className='flex items-center gap-2 cursor-pointer'>
-                      <SiGithub /> Github
-                    </Button>
+                    <AnimateButtonVariant>
+                      <Button className='flex items-center gap-2 cursor-pointer'>
+                        <SiGithub /> Github
+                      </Button>
+                    </AnimateButtonVariant>
                   </a>
                   {project.demo_link && (
                     <a href={project.demo_link} target='_blank'>
-                      <Button className='flex items-center gap-2 cursor-pointer'>
-                        <ExternalLink /> Demo
-                      </Button>
+                      <AnimateButtonVariant>
+                        <Button className='flex items-center gap-2 cursor-pointer'>
+                          <ExternalLink /> Demo
+                        </Button>
+                      </AnimateButtonVariant>
                     </a>
                   )}
                 </div>

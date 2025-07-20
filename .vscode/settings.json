@@ -1,3 +1,4 @@
 {
-  "cSpell.words": ["Horizonal"]
+  "cSpell.words": ["Horizonal"],
+  "postman.settings.dotenv-detection-notification-visibility": false
 }
