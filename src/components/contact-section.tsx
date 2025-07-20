@@ -29,8 +29,8 @@ export function ContactSection() {
   return (
     <>
       <h3 className='text-[clamp(2rem,1.4966rem+2.3973vw,3.75rem)] my-4 font-semibold flex items-center before:border-b-2 before:grow before:mr-5'>
-        <span className='relative'>
-          Contact <AnimateSvgPath className='-bottom-6 lg:-bottom-10' />
+        <span className='relative inline-block'>
+          Contact <AnimateSvgPath className='left-0 w-full -bottom-6 lg:-bottom-10' />
         </span>
       </h3>
       <div className='max-w-5xl mx-auto relative'>

@@ -1,4 +1,5 @@
 import { AnimateButtonVariant } from '@/components/animate-button-variant';
+import { Footer } from '@/components/footer';
 import { HeadComponent } from '@/components/head';
 import { HorizontalBar } from '@/components/horizontal-bar';
 import { Button } from '@/components/ui/button';
@@ -72,71 +73,78 @@ export default function ProjectsPage({ mdxSource, project }: InferGetStaticProps
   return (
     <>
       <HeadComponent {...headContent(project)} />
-      <div className='h-16 fixed w-full pl-6 pr-6 md:pr-16 z-10 bg-sidebar/40 backdrop-blur-xs shadow-xs'>
-        {/* copied from index.tsx */}
-        <HorizontalBar showLogoWhenMD />
-      </div>
-      <div className='pt-18'>
-        {/* padding top should be more than the height of the fixed horizontal bar */}
-        <div className='relative container mx-auto'>
-          <div className='prose dark:prose-invert max-w-full px-4'>
-            {'error' in mdxSource ? (
-              <div>
-                <p>Oops — Something Went Wrong</p>
-                <p>An unexpected error has occurred. The issue is being looked into, and steps are being taken to resolve it as soon as possible.</p>
-                <p>Apologies for the inconvenience, and thanks for your patience.</p>
-              </div>
-            ) : (
-              <MDXClient compiledSource='' {...mdxSource} />
-              // todo: look into 'compiledSource'
-            )}
+      <div className='flex flex-col min-h-screen'>
+        <div className='grow'>
+          <div className='h-16 fixed w-full pl-6 pr-6 md:pr-16 z-10 bg-sidebar/40 backdrop-blur-xs shadow-xs'>
+            {/* copied from index.tsx */}
+            <HorizontalBar showLogoWhenMD />
           </div>
-          <div className='fixed bottom-[2rem] right-[2rem]'>
-            <Popover>
-              <PopoverTrigger asChild>
-                <Button className='h-[4rem] w-[4rem] rounded-full'>
-                  <Ellipsis className='size-8' />
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent className='w-fit'>
-                <div className='flex flex-col items-center justify-center gap-4'>
-                  <Link href='/'>
-                    <AnimateButtonVariant>
-                      <Button className='flex items-center gap-2 cursor-pointer'>
-                        <House />
-                        Home
-                      </Button>
-                    </AnimateButtonVariant>
-                  </Link>
-                  <Link href='/projects'>
-                    <AnimateButtonVariant>
-                      <Button className='flex items-center gap-2 cursor-pointer'>
-                        <Kanban />
-                        More Projects
-                      </Button>
-                    </AnimateButtonVariant>
-                  </Link>
-                  <a href={`${process.env.NEXT_PUBLIC_GITHUB_REPO_LINK}/${project.github_repo_name}`} target='_blank'>
-                    <AnimateButtonVariant>
-                      <Button className='flex items-center gap-2 cursor-pointer'>
-                        <SiGithub /> Github
-                      </Button>
-                    </AnimateButtonVariant>
-                  </a>
-                  {project.demo_link && (
-                    <a href={project.demo_link} target='_blank'>
-                      <AnimateButtonVariant>
-                        <Button className='flex items-center gap-2 cursor-pointer'>
-                          <ExternalLink /> Demo
-                        </Button>
-                      </AnimateButtonVariant>
-                    </a>
-                  )}
-                </div>
-              </PopoverContent>
-            </Popover>
+          <div className='pt-18'>
+            {/* padding top should be more than the height of the fixed horizontal bar */}
+            <div className='relative container mx-auto'>
+              <div className='prose dark:prose-invert max-w-full px-4'>
+                {'error' in mdxSource ? (
+                  <div>
+                    <p>Oops — Something Went Wrong</p>
+                    <p>
+                      An unexpected error has occurred. The issue is being looked into, and steps are being taken to resolve it as soon as possible.
+                    </p>
+                    <p>Apologies for the inconvenience, and thanks for your patience.</p>
+                  </div>
+                ) : (
+                  <MDXClient compiledSource='' {...mdxSource} />
+                  // todo: look into 'compiledSource'
+                )}
+              </div>
+              <div className='fixed bottom-[2rem] right-[2rem]'>
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <Button className='h-[4rem] w-[4rem] rounded-full'>
+                      <Ellipsis className='size-8' />
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent className='w-fit'>
+                    <div className='flex flex-col items-center justify-center gap-4'>
+                      <Link href='/'>
+                        <AnimateButtonVariant>
+                          <Button className='flex items-center gap-2 cursor-pointer'>
+                            <House />
+                            Home
+                          </Button>
+                        </AnimateButtonVariant>
+                      </Link>
+                      <Link href='/projects'>
+                        <AnimateButtonVariant>
+                          <Button className='flex items-center gap-2 cursor-pointer'>
+                            <Kanban />
+                            More Projects
+                          </Button>
+                        </AnimateButtonVariant>
+                      </Link>
+                      <a href={`${process.env.NEXT_PUBLIC_GITHUB_REPO_LINK}/${project.github_repo_name}`} target='_blank'>
+                        <AnimateButtonVariant>
+                          <Button className='flex items-center gap-2 cursor-pointer'>
+                            <SiGithub /> Github
+                          </Button>
+                        </AnimateButtonVariant>
+                      </a>
+                      {project.demo_link && (
+                        <a href={project.demo_link} target='_blank'>
+                          <AnimateButtonVariant>
+                            <Button className='flex items-center gap-2 cursor-pointer'>
+                              <ExternalLink /> Demo
+                            </Button>
+                          </AnimateButtonVariant>
+                        </a>
+                      )}
+                    </div>
+                  </PopoverContent>
+                </Popover>
+              </div>
+            </div>
           </div>
         </div>
+        <Footer />
       </div>
     </>
   );

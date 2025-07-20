@@ -10,8 +10,8 @@ export function ExperienceSection() {
   return (
     <>
       <h3 className='text-[clamp(2rem,1.4966rem+2.3973vw,3.75rem)] my-4 font-semibold flex items-center after:border-b-2 after:grow after:ml-5'>
-        <span className='relative'>
-          Experience <AnimateSvgPath className='-bottom-10 lg:-bottom-16' />
+        <span className='relative inline-block'>
+          Experience <AnimateSvgPath className='left-0 w-full -bottom-10 lg:-bottom-16' />
         </span>
       </h3>
       <div className='relative'>

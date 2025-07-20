@@ -1,17 +1,14 @@
 import { AnimateRadialGradient } from '@/components/animate-radial-gradient';
 import { ContactSection } from '@/components/contact-section';
 import { ExperienceSection } from '@/components/experience-section';
+import { Footer } from '@/components/footer';
 import { HeadComponent } from '@/components/head';
 import { HeroSection } from '@/components/hero-section';
 import { HorizontalBar } from '@/components/horizontal-bar';
 import { ProjectsSection } from '@/components/projects-section';
 import { SkillsSection } from '@/components/skills-section';
-import { Theme } from '@/components/theme';
-import { Button } from '@/components/ui/button';
 import { VerticalBar } from '@/components/vertical-bar';
-import { FileText } from 'lucide-react';
 import { useState } from 'react';
-import { SiGithub, SiLinkedin } from 'react-icons/si';
 import { InView } from 'react-intersection-observer';
 
 export const TABS = ['skills', 'projects', 'experience', 'contact'] as const;
@@ -98,32 +95,7 @@ export default function Page() {
               </div>
             </div>
           </main>
-          <footer>
-            <div className='container mx-auto relative'>
-              <hr />
-              {/* center flow layout content - container */}
-              <div className='grid grid-cols-2 sm:grid-cols-4 place-content-center py-5'>
-                <a href={process.env.NEXT_PUBLIC_RESUME} target='_blank'>
-                  <Button variant='link' className='flex gap-2 cursor-pointer'>
-                    <FileText /> Resume
-                  </Button>
-                </a>
-                <a href={process.env.NEXT_PUBLIC_LINKEDIN_LINK} target='_blank'>
-                  <Button variant='link' className='flex gap-2 cursor-pointer'>
-                    <SiLinkedin /> LinkedIn
-                  </Button>
-                </a>
-                <a href={process.env.NEXT_PUBLIC_GITHUB_REPO_LINK} target='_blank'>
-                  <Button variant='link' className='flex gap-2 cursor-pointer'>
-                    <SiGithub /> Github
-                  </Button>
-                </a>
-                <div className='m-auto'>
-                  <Theme />
-                </div>
-              </div>
-            </div>
-          </footer>
+          <Footer />
         </div>
       </div>
     </>

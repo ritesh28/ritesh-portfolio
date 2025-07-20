@@ -38,7 +38,7 @@ export function ProjectCard({ project, showFeaturedBadge = false, isHorizontal =
                 width={580}
                 height={333}
                 alt='project-image'
-                className='dark:brightness-80 w-full h-auto'
+                className='dark:brightness-80 w-full h-auto object-cover'
               />
             </motion.div>
           </Link>

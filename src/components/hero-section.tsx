@@ -20,9 +20,9 @@ export function HeroSection() {
           <div className='text-4xl font-semibold text-foreground md:text-5xl lg:text-8xl'>
             <h2>
               Hey, I&apos;m{' '}
-              <span className='relative'>
+              <span className='relative inline-block'>
                 Ritesh Raj
-                <AnimateSvgPath className='inset-0' />
+                <AnimateSvgPath className='left-0 w-full top-0 lg:-top-2' />
               </span>
             </h2>
             <h3 className='text-muted-foreground text-[60%]'>Full Stack + GenAI Engineer</h3>
@@ -48,7 +48,7 @@ export function HeroSection() {
               </AnimateButtonVariant>
             </a>
           </div>
-          <div className='md:hidden flex flex-wrap gap-3 text-2xl -mt-2'>
+          <div className='md:hidden flex flex-wrap gap-3 text-2xl -mt-2 pointer-events-auto'>
             <a href={process.env.NEXT_PUBLIC_GITHUB_REPO_LINK} target='_blank'>
               <SiGithub />
             </a>

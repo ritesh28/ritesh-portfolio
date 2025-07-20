@@ -11,9 +11,9 @@ export function ProjectsSection() {
   return (
     <>
       <h3 className='text-[clamp(2rem,1.4966rem+2.3973vw,3.75rem)] my-4 font-semibold flex items-center before:border-b-2 before:grow before:mr-5'>
-        <span className='relative'>
+        <span className='relative inline-block'>
           Projects
-          <AnimateSvgPath className='-bottom-8 lg:-bottom-12' />
+          <AnimateSvgPath className='left-0 w-full -bottom-8 lg:-bottom-12' />
         </span>
       </h3>
       <div className='flex'>

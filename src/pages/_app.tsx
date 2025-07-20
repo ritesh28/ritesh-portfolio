@@ -9,7 +9,7 @@ const variant: Variants = {
   exitState: { opacity: 0, clipPath: 'polygon(50% 0, 50% 0, 50% 100%, 50% 100%)' },
 };
 
-function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }) {
   const router = useRouter();
   return (
     <ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange>
@@ -36,5 +36,3 @@ function MyApp({ Component, pageProps }) {
     </ThemeProvider>
   );
 }
-
-export default MyApp;
