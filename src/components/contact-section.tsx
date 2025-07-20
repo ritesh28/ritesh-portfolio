@@ -4,6 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
+import { AnimateButtonVariant } from '@/components/animate-button-variant';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
@@ -29,7 +30,7 @@ export function ContactSection() {
     <>
       <h3 className='text-[clamp(2rem,1.4966rem+2.3973vw,3.75rem)] my-4 font-semibold flex items-center before:border-b-2 before:grow before:mr-5'>
         <span className='relative'>
-          Contact <AnimateSvgPath className='-bottom-10' />
+          Contact <AnimateSvgPath className='-bottom-6 lg:-bottom-10' />
         </span>
       </h3>
       <div className='max-w-5xl mx-auto relative'>
@@ -103,10 +104,14 @@ export function ContactSection() {
                 <AlertDescription>I&apos;ll reach out at the earliest. Please check out my side projects.</AlertDescription>
               </Alert>
             )}
-            <Button type='submit' disabled={isEmailInflight} className='lg:self-end cursor-pointer'>
-              <Send />
-              {isEmailInflight ? 'Sending...' : 'Send'}
-            </Button>
+            <div className='lg:self-end cursor-pointer'>
+              <AnimateButtonVariant>
+                <Button type='submit' disabled={isEmailInflight}>
+                  <Send />
+                  {isEmailInflight ? 'Sending...' : 'Send'}
+                </Button>
+              </AnimateButtonVariant>
+            </div>
           </form>
         </Form>
       </div>

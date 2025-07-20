@@ -1,20 +1,13 @@
+import { AnimateButtonVariant } from '@/components/animate-button-variant';
 import { AnimateSvgPath } from '@/components/animate-svg-path';
 import { Button } from '@/components/ui/button';
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { FileText, SendHorizonal } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import Image from 'next/image';
 import Link from 'next/link';
 import { SiGithub, SiLinkedin } from 'react-icons/si';
 import MyDP from '../../public/ritesh_dp.png';
-
-const buttonVariants = (delay: number) =>
-  ({
-    initial: { scale: 0.9 },
-    final: { scale: 1, transition: { delay, type: 'spring', stiffness: 400, damping: 17 } },
-    whileHover: { scale: 1.1, transition: { type: 'spring', stiffness: 400, damping: 17 } },
-    whileTap: { scale: 0.9, transition: { type: 'spring', stiffness: 400, damping: 17 } },
-  }) satisfies Variants;
 
 export function HeroSection() {
   return (
@@ -41,51 +34,32 @@ export function HeroSection() {
           </p>
           <div className='flex flex-wrap items-start gap-3 lg:gap-5'>
             <Link href='#contact'>
-              <motion.div variants={buttonVariants(0)} initial='initial' animate='final' whileHover='whileHover' whileTap='whileTap'>
+              <AnimateButtonVariant>
                 <Button size='lg' className='flex items-center gap-2 cursor-pointer pointer-events-auto'>
                   <SendHorizonal /> <span className='whitespace-nowrap'>Contact Me</span>
                 </Button>
-              </motion.div>
+              </AnimateButtonVariant>
             </Link>
             <a href={process.env.NEXT_PUBLIC_RESUME} target='_blank'>
-              <motion.div variants={buttonVariants(0.25)} initial='initial' animate='final' whileHover='whileHover' whileTap='whileTap'>
+              <AnimateButtonVariant>
                 <Button size='lg' variant='secondary' className='underline flex items-center gap-2 cursor-pointer pointer-events-auto'>
                   <FileText /> <span className='whitespace-nowrap'>Resume</span>
                 </Button>
-              </motion.div>
+              </AnimateButtonVariant>
             </a>
           </div>
           <div className='md:hidden flex flex-wrap gap-3 text-2xl -mt-2'>
             <a href={process.env.NEXT_PUBLIC_GITHUB_REPO_LINK} target='_blank'>
-              <motion.div
-                variants={buttonVariants(0.5)}
-                initial='initial'
-                animate='final'
-                whileHover='whileHover'
-                whileTap='whileTap'
-                className='cursor-pointer pointer-events-auto'
-              >
-                <SiGithub />
-              </motion.div>
+              <SiGithub />
             </a>
             <a href={process.env.NEXT_PUBLIC_LINKEDIN_LINK} target='_blank'>
-              <motion.div
-                variants={buttonVariants(0.5)}
-                initial='initial'
-                animate='final'
-                whileHover='whileHover'
-                whileTap='whileTap'
-                className='cursor-pointer pointer-events-auto'
-              >
-                <SiLinkedin />
-              </motion.div>
+              <SiLinkedin />
             </a>
           </div>
         </div>
-
-        <motion.div variants={buttonVariants(0)} initial='initial' animate='final'>
+        <div>
           <Image src={MyDP} alt='my-pic' priority className='size-full object-cover object-[50%_0%]' />
-        </motion.div>
+        </div>
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+import { AnimateButtonVariant } from '@/components/animate-button-variant';
 import { Theme } from '@/components/theme';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -29,9 +30,11 @@ export function HorizontalBar({ showLogoWhenMD = false }: HorizontalBarProps) {
       </div>
       <div className='flex items-center gap-4'>
         <a href={process.env.NEXT_PUBLIC_RESUME} target='_blank'>
-          <Button variant='default' size='lg' className='cursor-pointer'>
-            My Resume
-          </Button>
+          <AnimateButtonVariant>
+            <Button variant='default' size='lg' className='cursor-pointer'>
+              My Resume
+            </Button>
+          </AnimateButtonVariant>
         </a>
         <div className='hidden md:block'>
           <Theme />

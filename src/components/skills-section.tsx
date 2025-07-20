@@ -9,34 +9,34 @@ export function SkillsSection() {
       <h3 className='text-[clamp(2rem,1.4966rem+2.3973vw,3.75rem)] my-4 font-semibold flex items-center after:border-b-2 after:grow after:ml-5'>
         <span className='relative'>
           Skills
-          <AnimateSvgPath className='-bottom-6' />
+          <AnimateSvgPath className='-bottom-4 lg:-bottom-6' />
         </span>
       </h3>
       <div className='flex flex-col gap-4 [&>div>*]:mr-2'>
         <div>
           {FRONTEND_SKILL_GROUP.map((skill) => (
-            <Badge key={skill.name} className={cn('[&>svg]:size-5 text-md', skill.featured && 'bg-orange-700')}>
+            <Badge key={skill.name} variant='secondary' className={cn('[&>svg]:size-5 text-md', skill.featured && 'bg-featured')}>
               {<skill.icon />} {skill.name}
             </Badge>
           ))}
         </div>
         <div>
           {BACKEND_SKILL_GROUP.map((skill) => (
-            <Badge key={skill.name} className={cn('[&>svg]:size-5 text-md', skill.featured && 'bg-orange-700')}>
+            <Badge key={skill.name} variant='secondary' className={cn('[&>svg]:size-5 text-md', skill.featured && 'bg-featured')}>
               {<skill.icon />} {skill.name}
             </Badge>
           ))}
         </div>
         <div>
           {DEVOPS_SKILL_GROUP.map((skill) => (
-            <Badge key={skill.name} className={cn('[&>svg]:size-5 text-md', skill.featured && 'bg-orange-700')}>
+            <Badge key={skill.name} variant='secondary' className={cn('[&>svg]:size-5 text-md', skill.featured && 'bg-featured')}>
               {<skill.icon />} {skill.name}
             </Badge>
           ))}
         </div>
         <div>
           {MISC_SKILL_GROUP.map((skill) => (
-            <Badge key={skill.name} className={cn('[&>svg]:size-5 text-md', skill.featured && 'bg-orange-700')}>
+            <Badge key={skill.name} variant='secondary' className={cn('[&>svg]:size-5 text-md', skill.featured && 'bg-featured')}>
               {<skill.icon />} {skill.name}
             </Badge>
           ))}

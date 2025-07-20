@@ -13,7 +13,14 @@ function MyApp({ Component, pageProps }) {
   const router = useRouter();
   return (
     <ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange>
-      <AnimatePresence mode='wait'>
+      <AnimatePresence
+        mode='wait'
+        onExitComplete={() => {
+          if (typeof window !== 'undefined') {
+            window.scrollTo({ top: 0 });
+          }
+        }}
+      >
         <motion.div
           key={router.route}
           variants={variant}
@@ -21,6 +28,7 @@ function MyApp({ Component, pageProps }) {
           initial='initialState'
           animate='animateState'
           exit='exitState'
+          className='min-h-screen'
         >
           <Component {...pageProps} />
         </motion.div>
