@@ -40,7 +40,7 @@ export function ProjectsSection() {
               transition={{ duration: 0.5 }}
               className='basis-[24rem]'
             >
-              <ProjectCard project={project} />
+              <ProjectCard project={project} layoutPrefix='projects-section' />
             </motion.li>
           ))}
       </ul>

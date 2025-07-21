@@ -74,7 +74,7 @@ export default function ProjectsPage() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
                   >
-                    <ProjectCard project={project} showFeaturedBadge isHorizontal={layoutMode === 'horizontal'} />
+                    <ProjectCard project={project} showFeaturedBadge isHorizontal={layoutMode === 'horizontal'} layoutPrefix='projects-page' />
                   </motion.div>
                 ))}
               </div>
