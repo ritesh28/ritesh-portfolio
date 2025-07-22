@@ -24,7 +24,7 @@ export default function MyApp({ Component, pageProps }) {
         <motion.div
           key={router.route}
           variants={variant}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.25 }}
           initial='initialState'
           animate='animateState'
           exit='exitState'
