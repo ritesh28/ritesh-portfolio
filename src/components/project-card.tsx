@@ -43,19 +43,17 @@ export function ProjectCard({ project, showFeaturedBadge = false, isHorizontal =
           </motion.div>
         </CardHeader>
         <CardContent className={cn(isHorizontal && 'basis-[60%]')}>
-          <Link href={`/projects/${project.id}`} scroll={false}>
+          <Link href={`/projects/${project.id}`} scroll={false} className='group'>
             <CardTitle>
               <motion.h3 layout layoutId={`${layoutPrefix}-project-${project.id}-card-title`}>
                 {project.title}
               </motion.h3>
             </CardTitle>
-            <CardDescription className='group'>
+            <CardDescription>
               <motion.p layout layoutId={`${layoutPrefix}-project-${project.id}-card-description`}>
                 <span>{project.small_description}</span>{' '}
-                <span className='underline text-foreground'>
-                  <Link href={`/projects/${project.id}`} scroll={false} className='inline-flex items-center gap-1 group-hover:gap-2'>
-                    Read More <MoveRight className='size-4' />
-                  </Link>
+                <span className='inline-flex items-center gap-1 group-hover:gap-2 underline text-foreground'>
+                  Read More <MoveRight className='size-4' />
                 </span>
               </motion.p>
             </CardDescription>

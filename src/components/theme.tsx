@@ -1,17 +1,22 @@
-'use client';
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
 import { Laptop, MoonStar, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 export function Theme() {
   const { setTheme, theme } = useTheme();
+  const [toggleGroupValue, setToggleGroupValue] = useState<string>('system'); // workaround from the react hydration error
+
+  useEffect(() => {
+    setToggleGroupValue(theme);
+  }, [theme]);
 
   return (
     <ToggleGroup
       type='single'
       variant='outline'
       size='sm'
-      value={theme}
+      value={toggleGroupValue}
       onValueChange={(value) => {
         if (value) setTheme(value);
       }}
