@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { cn } from '@/lib/utils';
 import { Project } from '@/models';
 import { motion } from 'framer-motion';
-import { ExternalLink, Star } from 'lucide-react';
+import { ExternalLink, MoveRight, Star } from 'lucide-react';
 import Link from 'next/link';
 import { SiGithub } from 'react-icons/si';
 
@@ -31,18 +31,16 @@ export function ProjectCard({ project, showFeaturedBadge = false, isHorizontal =
             isHorizontal ? 'basis-[20rem] py-2' : 'basis-[12rem] w-full',
           )}
         >
-          <Link href={`/projects/${project.id}`}>
-            <motion.div layout layoutId={`${layoutPrefix}-project-${project.id}-card-image`}>
-              <ImageWithFallback
-                src={`${process.env.NEXT_PUBLIC_GITHUB_RAW_REPO_LINK}/${project.github_repo_name}/refs/heads/main/${project.github_image_path}`}
-                fallbackSrc='https://placehold.co/580x333/lightblue/white/png?text=Project+Image'
-                width={580}
-                height={333}
-                alt='project-image'
-                className='dark:brightness-80 w-full h-auto object-cover'
-              />
-            </motion.div>
-          </Link>
+          <motion.div layout layoutId={`${layoutPrefix}-project-${project.id}-card-image`}>
+            <ImageWithFallback
+              src={`${process.env.NEXT_PUBLIC_GITHUB_RAW_REPO_LINK}/${project.github_repo_name}/refs/heads/main/${project.github_image_path}`}
+              fallbackSrc='https://placehold.co/580x333/lightblue/white/png?text=Project+Image'
+              width={580}
+              height={333}
+              alt='project-image'
+              className='dark:brightness-80 w-full h-auto object-cover'
+            />
+          </motion.div>
         </CardHeader>
         <CardContent className={cn(isHorizontal && 'basis-[60%]')}>
           <Link href={`/projects/${project.id}`} scroll={false}>
@@ -51,9 +49,14 @@ export function ProjectCard({ project, showFeaturedBadge = false, isHorizontal =
                 {project.title}
               </motion.h3>
             </CardTitle>
-            <CardDescription>
+            <CardDescription className='group'>
               <motion.p layout layoutId={`${layoutPrefix}-project-${project.id}-card-description`}>
-                {project.small_description}
+                <span>{project.small_description}</span>{' '}
+                <span className='underline text-foreground'>
+                  <Link href={`/projects/${project.id}`} scroll={false} className='inline-flex items-center gap-1 group-hover:gap-2'>
+                    Read More <MoveRight className='size-4' />
+                  </Link>
+                </span>
               </motion.p>
             </CardDescription>
           </Link>
