@@ -31,7 +31,7 @@ export function ProjectCard({ project, showFeaturedBadge = false, isHorizontal =
             isHorizontal ? 'basis-[20rem] py-2' : 'basis-[12rem] w-full',
           )}
         >
-          <motion.div layout layoutId={`${layoutPrefix}-project-${project.id}-card-image`}>
+          <motion.div layout='position'>
             <ImageWithFallback
               src={`${process.env.NEXT_PUBLIC_GITHUB_RAW_REPO_LINK}/${project.github_repo_name}/refs/heads/main/${project.github_image_path}`}
               fallbackSrc='https://placehold.co/580x333/lightblue/white/png?text=Project+Image'
@@ -45,17 +45,13 @@ export function ProjectCard({ project, showFeaturedBadge = false, isHorizontal =
         <CardContent className={cn(isHorizontal && 'basis-[60%]')}>
           <Link href={`/projects/${project.id}`} scroll={false} className='group'>
             <CardTitle>
-              <motion.h3 layout layoutId={`${layoutPrefix}-project-${project.id}-card-title`}>
-                {project.title}
-              </motion.h3>
+              <motion.h3 layout='position'>{project.title}</motion.h3>
             </CardTitle>
             <CardDescription>
-              <motion.p layout layoutId={`${layoutPrefix}-project-${project.id}-card-description`}>
-                <span>{project.small_description}</span>{' '}
-                <span className='inline-flex items-center gap-1 group-hover:gap-2 underline text-foreground'>
-                  Read More <MoveRight className='size-4' />
-                </span>
-              </motion.p>
+              <motion.span layout='position'>{project.small_description}</motion.span>{' '}
+              <span className='inline-flex items-center gap-1 group-hover:gap-2 underline text-foreground'>
+                Read More <MoveRight className='size-4' />
+              </span>
             </CardDescription>
           </Link>
         </CardContent>
@@ -63,7 +59,7 @@ export function ProjectCard({ project, showFeaturedBadge = false, isHorizontal =
           <div className='flex gap-2'>
             <a href={`${process.env.NEXT_PUBLIC_GITHUB_REPO_LINK}/${project.github_repo_name}`} target='_blank'>
               <AnimateButtonVariant>
-                <motion.div layout layoutId={`${layoutPrefix}-project-${project.id}-card-github`}>
+                <motion.div layout>
                   <Button className='flex items-center gap-2 cursor-pointer'>
                     <SiGithub /> Github
                   </Button>
@@ -73,7 +69,7 @@ export function ProjectCard({ project, showFeaturedBadge = false, isHorizontal =
             {project.demo_link && (
               <a href={project.demo_link} target='_blank'>
                 <AnimateButtonVariant>
-                  <motion.div layout layoutId={`${layoutPrefix}-project-${project.id}-card-demo`}>
+                  <motion.div layout>
                     <Button className='flex items-center gap-2 cursor-pointer'>
                       <ExternalLink /> Demo
                     </Button>
