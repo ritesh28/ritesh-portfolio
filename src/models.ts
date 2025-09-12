@@ -96,4 +96,15 @@ export const PROJECTS: Record<string, Project> = {
     demo_link: null,
     tools: ['Design Pattern', 'Dev Enabler', 'Programming', 'JS'],
   },
+  'a3b2c1d4-e5f6-7890-ab12-cd34ef567890': {
+    id: 'a3b2c1d4-e5f6-7890-ab12-cd34ef567890',
+    title: 'TanStack Table Demo',
+    small_description:
+      'This website demonstrates TanStack Table features like multi-sorting, column reordering, row pinning, filtering (basic and advanced), column visibility, row selection, and pagination — showcasing its power for building interactive data grids.',
+    featured: true,
+    github_repo_name: 'table-next',
+    github_image_path: 'public/page_home.png',
+    demo_link: 'https://table-next-mauve.vercel.app/',
+    tools: ['TanStack', 'Front-End', 'TS'],
+  },
 };
