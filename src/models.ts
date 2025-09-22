@@ -1,7 +1,7 @@
 import { StaticImageData } from 'next/image';
 import { IconType } from 'react-icons';
 import { RiNextjsFill } from 'react-icons/ri';
-import { SiDocker, SiNestjs, SiPython, SiVorondesign } from 'react-icons/si';
+import { SiAstro, SiDocker, SiNestjs, SiPython, SiVorondesign } from 'react-icons/si';
 import Infosys from '../public/infosys.png';
 import Pwc from '../public/pwc.png';
 
@@ -14,13 +14,14 @@ interface SkillProps {
 const SKILLS = {
   nextjs: { name: 'Next.js', icon: RiNextjsFill, featured: true } as SkillProps,
   nestjs: { name: 'NestJS', icon: SiNestjs, featured: true } as SkillProps,
+  astrojs: { name: 'Astro.js', icon: SiAstro, featured: true } as SkillProps,
   python: { name: 'Python', icon: SiPython, featured: false } as SkillProps,
   docker: { name: 'Docker', icon: SiDocker, featured: true } as SkillProps,
   designPatterns: { name: 'Design Patterns', icon: SiVorondesign, featured: false } as SkillProps,
 } as const;
 
 // group the skills in some way (like fe, be, db, ai, python-package, devops, other - design)
-export const FRONTEND_SKILL_GROUP = [SKILLS.nextjs];
+export const FRONTEND_SKILL_GROUP = [SKILLS.nextjs, SKILLS.astrojs];
 export const BACKEND_SKILL_GROUP = [SKILLS.nestjs, SKILLS.python];
 export const DEVOPS_SKILL_GROUP = [SKILLS.docker];
 export const MISC_SKILL_GROUP = [SKILLS.designPatterns];
@@ -106,5 +107,16 @@ export const PROJECTS: Record<string, Project> = {
     github_image_path: 'public/page_home.png',
     demo_link: 'https://table-next-mauve.vercel.app/',
     tools: ['TanStack', 'Front-End', 'TS'],
+  },
+  'b4c5d6e7-f890-1234-5678-9abcdef01234': {
+    id: 'b4c5d6e7-f890-1234-5678-9abcdef01234',
+    title: 'Blog Astro',
+    small_description:
+      'A developer blog built with Astro.js, featuring usage guides, troubleshooting tips, and feature insights on libraries and frameworks. Topics span JavaScript, Python, and data science, offering practical help for developers at every level.',
+    featured: true,
+    github_repo_name: 'blog-astro',
+    github_image_path: 'public/page_home.png',
+    demo_link: 'https://blog-astro-dun.vercel.app/',
+    tools: ['Astro', 'Front-End', 'MarkDown'],
   },
 };
