@@ -43,7 +43,7 @@ export function HeroSection() {
           </a>
         </div>
         <div className='md:hidden flex flex-wrap gap-3 text-2xl -mt-2 pointer-events-auto'>
-          <a href={process.env.NEXT_PUBLIC_GITHUB_REPO_LINK} target='_blank'>
+          <a href={process.env.NEXT_PUBLIC_GITHUB_LINK} target='_blank'>
             <SiGithub />
           </a>
           <a href={process.env.NEXT_PUBLIC_LINKEDIN_LINK} target='_blank'>

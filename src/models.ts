@@ -119,4 +119,15 @@ export const PROJECTS: Record<string, Project> = {
     demo_link: 'https://blog-astro-dun.vercel.app/',
     tools: ['Astro', 'Front-End', 'MarkDown'],
   },
+  'c5d6e7f8-9012-3456-789a-bcdef0123456': {
+    id: 'c5d6e7f8-9012-3456-789a-bcdef0123456',
+    title: 'Collection of Cheats',
+    small_description:
+      "A comprehensive collection of easy-to-navigate cheat-sheets covering a wide range of topics — from programming languages like JavaScript and Python, to Data Science tools, and developer-enablers. Whether you're coding, debugging, or deploying, this site provides quick, practical references to boost your productivity and streamline your development workflow.",
+    featured: false,
+    github_repo_name: 'cheats-starlight',
+    github_image_path: 'public/page_home.png',
+    demo_link: '',
+    tools: ['Astro', 'Front-End', 'Starlight'],
+  },
 };

@@ -32,14 +32,16 @@ export function ProjectCard({ project, showFeaturedBadge = false, isHorizontal =
           )}
         >
           <motion.div layout='position'>
-            <ImageWithFallback
-              src={`${process.env.NEXT_PUBLIC_GITHUB_RAW_REPO_LINK}/${project.github_repo_name}/refs/heads/main/${project.github_image_path}`}
-              fallbackSrc='https://placehold.co/580x333/lightblue/white/png?text=Project+Image'
-              width={580}
-              height={333}
-              alt='project-image'
-              className='dark:brightness-80 w-full h-auto object-cover'
-            />
+            <Link href={`/projects/${project.id}`} scroll={false} className='group'>
+              <ImageWithFallback
+                src={`${process.env.NEXT_PUBLIC_GITHUB_RAW_LINK}/${project.github_repo_name}/refs/heads/main/${project.github_image_path}`}
+                fallbackSrc='https://placehold.co/580x333/lightblue/white/png?text=Project+Image'
+                width={580}
+                height={333}
+                alt='project-image'
+                className='dark:brightness-80 w-full h-auto object-cover dark:group-hover:opacity-90 group-hover:opacity-85'
+              />
+            </Link>
           </motion.div>
         </CardHeader>
         <CardContent className={cn(isHorizontal && 'basis-[60%]')}>
@@ -57,7 +59,7 @@ export function ProjectCard({ project, showFeaturedBadge = false, isHorizontal =
         </CardContent>
         <CardFooter className='flex flex-col items-start gap-3'>
           <div className='flex gap-2'>
-            <a href={`${process.env.NEXT_PUBLIC_GITHUB_REPO_LINK}/${project.github_repo_name}`} target='_blank'>
+            <a href={`${process.env.NEXT_PUBLIC_GITHUB_LINK}/${project.github_repo_name}`} target='_blank'>
               <AnimateButtonVariant>
                 <motion.div layout>
                   <Button className='flex items-center gap-2 cursor-pointer'>

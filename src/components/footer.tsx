@@ -20,7 +20,7 @@ export function Footer() {
               <SiLinkedin /> LinkedIn
             </Button>
           </a>
-          <a href={process.env.NEXT_PUBLIC_GITHUB_REPO_LINK} target='_blank'>
+          <a href={process.env.NEXT_PUBLIC_GITHUB_LINK} target='_blank'>
             <Button variant='link' className='flex gap-2 cursor-pointer'>
               <SiGithub /> Github
             </Button>

@@ -18,7 +18,7 @@ import remarkGfm from 'remark-gfm';
 const headContent = (project: Project) => ({
   title: `${project.title} | Ritesh Raj`,
   description: `${project.small_description} Build by Ritesh Raj.`,
-  img: `${process.env.NEXT_PUBLIC_GITHUB_RAW_REPO_LINK}/${project.github_repo_name}/refs/heads/main/${project.github_image_path}`,
+  img: `${process.env.NEXT_PUBLIC_GITHUB_RAW_LINK}/${project.github_repo_name}/refs/heads/main/${project.github_image_path}`,
   keywords: ['ritesh raj', 'portfolio', 'full stack developer', 'generative AI engineer', project.title, ...project.tools, 'github'],
 });
 
@@ -52,8 +52,8 @@ export const getStaticProps = (async ({ params }: GetStaticPropsContext) => {
     },
   });
 
-  const imageAbsolutePath = `${process.env.NEXT_PUBLIC_GITHUB_RAW_REPO_LINK}/${project.github_repo_name}/refs/heads/main/`;
-  const linkAbsolutePath = `${process.env.NEXT_PUBLIC_GITHUB_REPO_LINK}/${project.github_repo_name}/tree/main/`;
+  const imageAbsolutePath = `${process.env.NEXT_PUBLIC_GITHUB_RAW_LINK}/${project.github_repo_name}/refs/heads/main/`;
+  const linkAbsolutePath = `${process.env.NEXT_PUBLIC_GITHUB_LINK}/${project.github_repo_name}/tree/main/`;
   const mdxText = await res.text();
   const mdxSource = await serialize({
     source: mdxText,
@@ -121,7 +121,7 @@ export default function ProjectsPage({ mdxSource, project }: InferGetStaticProps
                           </Button>
                         </AnimateButtonVariant>
                       </Link>
-                      <a href={`${process.env.NEXT_PUBLIC_GITHUB_REPO_LINK}/${project.github_repo_name}`} target='_blank'>
+                      <a href={`${process.env.NEXT_PUBLIC_GITHUB_LINK}/${project.github_repo_name}`} target='_blank'>
                         <AnimateButtonVariant>
                           <Button className='flex items-center gap-2 cursor-pointer'>
                             <SiGithub /> Github
