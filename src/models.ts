@@ -127,7 +127,7 @@ export const PROJECTS: Record<string, Project> = {
     featured: false,
     github_repo_name: 'cheats-starlight',
     github_image_path: 'public/page_home.png',
-    demo_link: '',
+    demo_link: 'https://cheats-starlight.vercel.app/',
     tools: ['Astro', 'Front-End', 'Starlight'],
   },
 };

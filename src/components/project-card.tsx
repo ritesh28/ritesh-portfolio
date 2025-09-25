@@ -20,7 +20,7 @@ export function ProjectCard({ project, showFeaturedBadge = false, isHorizontal =
   return (
     <motion.div layout layoutId={`${layoutPrefix}-project-${project.id}-card`} className='h-full'>
       <Card className={cn('flex gap-4 relative h-full', isHorizontal ? 'flex-row' : 'flex-col')}>
-        {showFeaturedBadge && (
+        {showFeaturedBadge && project.featured && (
           <Badge className='absolute top-2 right-2 h-5 w-5 rounded-full p-0 bg-featured'>
             <Star />
           </Badge>

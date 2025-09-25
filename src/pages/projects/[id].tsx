@@ -96,7 +96,7 @@ export default function ProjectsPage({ mdxSource, project }: InferGetStaticProps
                   // todo: look into 'compiledSource'
                 )}
               </div>
-              <div className='fixed bottom-[2rem] right-[2rem]'>
+              <div className='fixed bottom-[5rem] right-[2.5rem]'>
                 <Popover>
                   <PopoverTrigger asChild>
                     <Button className='h-[4rem] w-[4rem] rounded-full'>
