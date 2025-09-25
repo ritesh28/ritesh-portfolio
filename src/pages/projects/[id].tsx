@@ -99,7 +99,7 @@ export default function ProjectsPage({ mdxSource, project }: InferGetStaticProps
               <div className='fixed bottom-[5rem] right-[2.5rem]'>
                 <Popover>
                   <PopoverTrigger asChild>
-                    <Button className='h-[4rem] w-[4rem] rounded-full'>
+                    <Button className='h-[4rem] w-[4rem] rounded-full bg-blue-600 dark:bg-blue-400 hover:brightness-110 hover:cursor-pointer'>
                       <Ellipsis className='size-8' />
                     </Button>
                   </PopoverTrigger>

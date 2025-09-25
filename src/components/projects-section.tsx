@@ -17,7 +17,7 @@ export function ProjectsSection() {
         </span>
       </h3>
       <div className='flex'>
-        <Link href='/projects' scroll={false}>
+        {/* <Link href='/projects' scroll={false}>
           <AnimateButtonVariant>
             <Button className='mb-3 px-8 py-7 cursor-pointer origin-right'>
               <div className='flex items-center gap-2 text-lg'>
@@ -26,9 +26,9 @@ export function ProjectsSection() {
               </div>
             </Button>
           </AnimateButtonVariant>
-        </Link>
+        </Link> */}
       </div>
-      <ul className='flex flex-wrap gap-5'>
+      <ul className='flex items-stretch flex-wrap gap-5'>
         {Object.values(PROJECTS)
           .filter((project) => project.featured)
           .map((project) => (
@@ -43,6 +43,18 @@ export function ProjectsSection() {
               <ProjectCard project={project} layoutPrefix='projects-section' />
             </motion.li>
           ))}
+        <motion.li className='self-center'>
+          <Link href='/projects' scroll={false}>
+            <AnimateButtonVariant>
+              <Button className='mb-3 px-8 py-7 cursor-pointer origin-right bg-blue-600 dark:bg-blue-400'>
+                <div className='flex items-center gap-2 text-lg'>
+                  <Kanban className='size-5' />
+                  More Projects
+                </div>
+              </Button>
+            </AnimateButtonVariant>
+          </Link>
+        </motion.li>
       </ul>
     </>
   );
