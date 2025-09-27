@@ -1,28 +1,31 @@
-import { cn } from '@/lib/utils';
-import { motion } from 'framer-motion';
+// import { cn } from '@/lib/utils';
+// import { motion } from 'framer-motion';
 
 const pathData =
   'M25.112102508544922,196.4125518798828C33.61434400558472,196.2944645436605,72.56351873397827,193.39012603759767,89.68608856201172,195.51568603515625C106.80865839004517,197.64124603271483,139.21523365020752,213.3826528676351,155.1569366455078,212.55604553222656C171.0986396408081,211.72943819681802,191.15992251078288,189.59191563924153,210.76231384277344,189.23765563964844C230.364705174764,188.88339564005534,284.5515521494548,211.63676325480142,304.0358581542969,209.86546325683594C323.520164159139,208.09416325887045,330.4035807800293,175.31239893595378,358.744384765625,175.7847442626953C387.0851887512207,176.25708958943684,485.1554173787435,213.21672345479328,519.282470703125,213.45289611816406C553.4095240275064,213.68906878153484,592.1942961629231,176.16141868591308,617.9371948242188,177.57846069335938C643.6800934855144,178.99550270080567,694.6053327433268,222.56202580769857,714.7981567382812,224.21524047851562C734.9909807332357,225.86845514933268,763.8609510294597,194.62181615193686,771.3004150390625,190.134521484375';
 
 export function AnimateSvgPath({ className }: { className: string }) {
   return (
-    <svg viewBox='0 0 800 400' className={cn('absolute', className)}>
-      <motion.path
-        initial={{ pathLength: 0 }}
-        whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }}
-        transition={{
-          duration: 0.75,
-          ease: 'easeInOut',
-        }}
-        // On mobile screen, stroke-dasharray does not work properly. Hence hiding
-        className='stroke-featured hidden lg:block'
-        d={pathData}
-        strokeWidth='10'
-        strokeLinecap='round'
-        fill='none'
-      />
-      <path className='stroke-featured block lg:hidden' d={pathData} strokeWidth='10' strokeLinecap='round' fill='none' />
-    </svg>
+    // AnimateSvgPath is not looking professional enough
+    // todo: revisit later
+    null
+    // <svg viewBox='0 0 800 400' className={cn('absolute', className)}>
+    //   <motion.path
+    //     initial={{ pathLength: 0 }}
+    //     whileInView={{ pathLength: 1 }}
+    //     viewport={{ once: true }}
+    //     transition={{
+    //       duration: 0.75,
+    //       ease: 'easeInOut',
+    //     }}
+    //     // On mobile screen, stroke-dasharray does not work properly. Hence hiding
+    //     className='stroke-featured hidden lg:block'
+    //     d={pathData}
+    //     strokeWidth='10'
+    //     strokeLinecap='round'
+    //     fill='none'
+    //   />
+    //   <path className='stroke-featured block lg:hidden' d={pathData} strokeWidth='10' strokeLinecap='round' fill='none' />
+    // </svg>
   );
 }

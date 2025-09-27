@@ -12,7 +12,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useEmail } from '@/hooks/use-email';
 import { AlertCircleIcon, CheckCircle2Icon, Send } from 'lucide-react';
-import { SiLinkedin } from 'react-icons/si';
+import Link from 'next/link';
 
 export function ContactSection() {
   const { emailSuccessStatus, isEmailInflight, handleSubmit } = useEmail();
@@ -82,26 +82,32 @@ export function ContactSection() {
               )}
             />
             {emailSuccessStatus === false && (
-              <Alert variant='destructive'>
+              <Alert className='text-red-800 bg-red-50 dark:bg-gray-800 dark:text-red-400 border-0'>
                 <AlertCircleIcon />
-                <AlertTitle>Unable to send the message.</AlertTitle>
-                <AlertDescription>
-                  <div className='flex gap-2'>
-                    Please connect with me on
-                    <a href='#'>
-                      <span className='flex gap-1 items-center underline text-foreground'>
-                        <SiLinkedin /> LinkedIn.
-                      </span>
+                <AlertTitle>Oops! That didn&apos;t go as planned.</AlertTitle>
+                <AlertDescription className='text-inherit'>
+                  <p>
+                    Looks like the form had a moment. You can still reach me the old-fashioned (modern) way —{' '}
+                    <a href={process.env.NEXT_PUBLIC_LINKEDIN_LINK} target='_blank' className='inline underline'>
+                      connect with me on LinkedIn!
                     </a>
-                  </div>
+                  </p>
                 </AlertDescription>
               </Alert>
             )}
             {emailSuccessStatus && (
-              <Alert>
+              <Alert className='text-green-800 bg-green-50 dark:bg-gray-800 dark:text-green-400 border-0'>
                 <CheckCircle2Icon />
-                <AlertTitle>Thanks for your message!</AlertTitle>
-                <AlertDescription>I&apos;ll reach out at the earliest. Please check out my side projects.</AlertDescription>
+                <AlertTitle>Got it! I&apos;ll reply faster than a dev spotting a missing semicolon.</AlertTitle>
+                <AlertDescription className='text-inherit'>
+                  <p>
+                    In the meantime, go ahead and explore{' '}
+                    <Link href='/projects' scroll={false} className='inline underline'>
+                      my side projects
+                    </Link>{' '}
+                    — they&apos;re cooler than my email response time.
+                  </p>
+                </AlertDescription>
               </Alert>
             )}
             <div className='lg:self-end cursor-pointer'>

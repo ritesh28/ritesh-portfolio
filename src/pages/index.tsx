@@ -1,4 +1,3 @@
-import { AnimateRadialGradient } from '@/components/animate-radial-gradient';
 import { ContactSection } from '@/components/contact-section';
 import { ExperienceSection } from '@/components/experience-section';
 import { Footer } from '@/components/footer';
@@ -28,7 +27,6 @@ export default function Page() {
     <>
       <HeadComponent {...headContent} />
       <div className='relative'>
-        <AnimateRadialGradient />
         <header className='hidden md:block md:w-12 fixed z-10'>
           <VerticalBar activeTab={activeTab} />
         </header>
