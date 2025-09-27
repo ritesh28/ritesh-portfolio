@@ -3,6 +3,7 @@ import { ImageWithFallback } from '@/components/image-with-fallback';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import { cn } from '@/lib/utils';
 import { Project } from '@/models';
 import { motion } from 'framer-motion';
@@ -21,9 +22,16 @@ export function ProjectCard({ project, showFeaturedBadge = false, isHorizontal =
     <motion.div layout layoutId={`${layoutPrefix}-project-${project.id}-card`} className='h-full'>
       <Card className={cn('flex gap-4 relative h-full p-0', isHorizontal ? 'flex-row' : 'flex-col pb-4')}>
         {showFeaturedBadge && project.featured && (
-          <Badge className='absolute top-2 right-2 w-7 h-7 rounded-full p-0 bg-featured z-10'>
-            <Star />
-          </Badge>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Badge className='absolute top-2 right-2 w-7 h-7 rounded-full p-0 bg-featured z-10'>
+                <Star />
+              </Badge>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Featured</p>
+            </TooltipContent>
+          </Tooltip>
         )}
         <CardHeader
           className={cn(
