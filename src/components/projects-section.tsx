@@ -38,12 +38,12 @@ export function ProjectsSection() {
               whileInView={{ y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className='basis-[24rem]'
+              className='basis-[21rem]'
             >
               <ProjectCard project={project} layoutPrefix='projects-section' />
             </motion.li>
           ))}
-        <motion.li className='self-center'>
+        <motion.li className='self-center basis-[21rem]'>
           <Link href='/projects' scroll={false}>
             <AnimateButtonVariant>
               <Button className='mb-3 px-8 py-7 cursor-pointer origin-right bg-blue-600 dark:bg-blue-400'>

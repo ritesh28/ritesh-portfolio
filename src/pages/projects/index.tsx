@@ -68,7 +68,7 @@ export default function ProjectsPage() {
                 {Object.values(PROJECTS).map((project) => (
                   <motion.div
                     key={project.id}
-                    className={layoutMode === 'horizontal' ? 'basis-[12rem]' : 'basis-[24rem]'}
+                    className={layoutMode === 'horizontal' ? 'basis-[12rem]' : 'basis-[21rem]'}
                     initial={{ y: 100 }}
                     whileInView={{ y: 0 }}
                     viewport={{ once: true }}

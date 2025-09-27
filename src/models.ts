@@ -39,7 +39,7 @@ export const EXPERIENCES: Experience[] = [
     company_name: 'Infosys',
     company_logo: Infosys,
     duration: '2015 - 2022', // todo
-    designation: 'Technical Lead',
+    designation: 'Technology Analyst',
     //todo
     workDescription:
       'I help build and scale Google Photos. Increased throughput of our primary services by 70%. Migrated backend service from Java to Go. Also helped make it look prettier.',

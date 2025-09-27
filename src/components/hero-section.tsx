@@ -12,7 +12,7 @@ export function HeroSection() {
     <div className='relative flex flex-col items-center gap-10 lg:my-0 lg:flex-row pointer-events-none'>
       <div className='flex flex-col gap-7 lg:w-2/3'>
         <div className='text-4xl font-semibold text-foreground md:text-5xl lg:text-8xl'>
-          <h2>
+          <h2 className='mb-3'>
             Hey, I&apos;m{' '}
             <span className='relative inline-block'>
               Ritesh Raj
@@ -51,7 +51,7 @@ export function HeroSection() {
           </a>
         </div>
       </div>
-      <div>
+      <div className='translate-y-5'>
         <Image src={MyDP} alt='my-pic' priority className='size-full object-cover object-[50%_0%]' />
       </div>
     </div>

@@ -44,7 +44,7 @@ export default function Page() {
                 {/* center flow layout content - container */}
                 <InView
                   as='section'
-                  id={TABS['0']}
+                  id={'hero'}
                   threshold={0}
                   rootMargin='-40%'
                   onChange={(inView, _) => inView && setActiveTab(null)}
