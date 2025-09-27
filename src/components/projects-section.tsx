@@ -16,18 +16,7 @@ export function ProjectsSection() {
           <AnimateSvgPath className='left-0 w-full -bottom-8 lg:-bottom-12' />
         </span>
       </h3>
-      <div className='flex'>
-        {/* <Link href='/projects' scroll={false}>
-          <AnimateButtonVariant>
-            <Button className='mb-3 px-8 py-7 cursor-pointer origin-right'>
-              <div className='flex items-center gap-2 text-lg'>
-                <Kanban className='size-5' />
-                More Projects
-              </div>
-            </Button>
-          </AnimateButtonVariant>
-        </Link> */}
-      </div>
+      <div className='flex'></div>
       <ul className='flex items-stretch flex-wrap gap-5'>
         {Object.values(PROJECTS)
           .filter((project) => project.featured)
@@ -46,7 +35,7 @@ export function ProjectsSection() {
         <motion.li className='self-center basis-[21rem]'>
           <Link href='/projects' scroll={false}>
             <AnimateButtonVariant>
-              <Button className='mb-3 px-8 py-7 cursor-pointer origin-right bg-blue-600 dark:bg-blue-400'>
+              <Button className='mb-3 px-8 py-7 w-full lg:w-auto cursor-pointer origin-right bg-blue-600 dark:bg-blue-400'>
                 <div className='flex items-center gap-2 text-lg'>
                   <Kanban className='size-5' />
                   More Projects

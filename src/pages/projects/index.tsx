@@ -42,7 +42,7 @@ export default function ProjectsPage() {
           </div>
           <main className='pt-18'>
             {/* padding top should be more than the height of the fixed horizontal bar */}
-            <div className='relative container mx-auto'>
+            <div className='relative container px-8 mx-auto'>
               <div className='flex items-center gap-10'>
                 <h3 className='text-[clamp(2rem,1.4966rem+2.3973vw,3.75rem)] my-4 font-semibold flex items-center'>All Projects</h3>
                 <div className='hidden lg:block'>
