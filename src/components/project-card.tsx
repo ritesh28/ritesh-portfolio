@@ -61,7 +61,7 @@ export function ProjectCard({ project, showFeaturedBadge = false, isHorizontal =
             </CardTitle>
             <CardDescription>
               <motion.span layout='position'>{project.small_description}</motion.span>{' '}
-              <span className='inline-flex items-center gap-1 group-hover:gap-2 underline text-foreground'>
+              <span className='inline-flex items-center gap-1 underline text-foreground group-hover:gap-2 ease-out duration-300 transition-all'>
                 Read More <MoveRight className='size-4' />
               </span>
             </CardDescription>

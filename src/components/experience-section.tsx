@@ -25,8 +25,8 @@ export function ExperienceSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className='absolute left-0 lg:left-1/2 -translate-1/2 top-1/2 w-12 h-12 rounded-full overflow-hidden hidden lg:block'>
-              <Image src={exp.company_logo} alt={exp.company_name} />
+            <div className='absolute left-0 lg:left-1/2 -translate-1/2 top-1/2 w-12 h-12 rounded-full shadow overflow-hidden hidden lg:block'>
+              <Image src={exp.company_logo} alt={exp.company_name} className='dark:brightness-80' />
             </div>
             <div className={cn('w-full lg:w-2/5 lg:ml-14', index % 2 == 1 && 'lg:mr-14')}>
               <Card>

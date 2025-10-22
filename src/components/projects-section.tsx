@@ -35,7 +35,7 @@ export function ProjectsSection() {
         <motion.li className='self-center basis-[21rem]'>
           <Link href='/projects' scroll={false}>
             <AnimateButtonVariant>
-              <Button className='mb-3 px-8 py-7 w-full lg:w-auto cursor-pointer origin-right bg-blue-600 dark:bg-blue-400'>
+              <Button className='mb-3 px-8 py-7 w-full lg:w-auto cursor-pointer origin-right bg-featured hover:bg-featured/80 text-foreground'>
                 <div className='flex items-center gap-2 text-lg'>
                   <Kanban className='size-5' />
                   More Projects
