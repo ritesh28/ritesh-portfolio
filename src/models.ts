@@ -38,17 +38,17 @@ export const EXPERIENCES: Experience[] = [
   {
     company_name: 'Infosys',
     company_logo: Infosys,
-    duration: '2015 - 2022', // todo
+    duration: '2015 - 2022',
     designation: 'Technology Analyst',
-    //todo
     workDescription:
-      'I help build and scale Google Photos. Increased throughput of our primary services by 70%. Migrated backend service from Java to Go. Also helped make it look prettier.',
+      'Designed and developed scalable full-stack solutions—Open Banking consent management, HPaaS provisioning platform, and TEMS system—improving security, automation, and productivity through React.js, Node.js, Azure, Redis, and SQL Server integrations.',
   },
   {
     company_name: 'Pwc',
     company_logo: Pwc,
     duration: '2022 - Present',
-    designation: 'Senior Analyst',
+    designation: 'Senior Associate',
+    //todo
     workDescription:
       'I help build and scale Google Photos. Increased throughput of our primary services by 70%. Migrated backend service from Java to Go. Also helped make it look prettier.',
   },
