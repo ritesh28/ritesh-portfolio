@@ -112,7 +112,7 @@ export function ContactSection() {
             )}
             <div className='lg:self-end cursor-pointer'>
               <AnimateButtonVariant>
-                <Button type='submit' disabled={isEmailInflight}>
+                <Button type='submit' disabled={isEmailInflight} className='cursor-pointer disabled:cursor-not-allowed'>
                   <Send />
                   {isEmailInflight ? 'Sending...' : 'Send'}
                 </Button>

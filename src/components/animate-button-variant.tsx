@@ -14,7 +14,14 @@ interface AnimateButtonVariantProps {
 }
 export function AnimateButtonVariant({ noInitialAnimation, children }: AnimateButtonVariantProps) {
   return (
-    <motion.div variants={buttonVariants(noInitialAnimation)} initial='initial' animate='final' whileHover='whileHover' whileTap='whileTap'>
+    <motion.div
+      className='w-fit'
+      variants={buttonVariants(noInitialAnimation)}
+      initial='initial'
+      animate='final'
+      whileHover='whileHover'
+      whileTap='whileTap'
+    >
       {children}
     </motion.div>
   );

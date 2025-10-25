@@ -15,7 +15,7 @@ export function HorizontalBar({ showLogoWhenMD = false }: HorizontalBarProps) {
     <div className='flex justify-between items-center h-full'>
       <div className='flex items-center gap-16 h-full'>
         <div className={cn(!showLogoWhenMD && 'md:hidden', 'select-none h-full')}>
-          <Link href='/'>
+          <Link href='/' scroll={false}>
             <Image src={LogoImageSmall} alt='logo' className='h-full w-auto' />
           </Link>
         </div>

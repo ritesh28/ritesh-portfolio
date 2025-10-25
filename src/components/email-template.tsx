@@ -1,9 +1,9 @@
 import { z } from 'zod';
 
 export const EmailTemplateSchema = z.object({
-  name: z.string().min(1, { message: 'Name is required' }),
-  email: z.email({ message: 'Email is invalid' }),
-  message: z.string().min(2, { message: 'Please scribble down a message!' }),
+  name: z.string().min(1, { error: 'Name is required' }),
+  email: z.email({ error: (iss) => (iss.input === '' ? 'Email is required' : 'Email is invalid') }),
+  message: z.string().min(2, { error: 'Please scribble down a message!' }),
 });
 
 export function EmailTemplate({ name, email, message }: z.infer<typeof EmailTemplateSchema>) {

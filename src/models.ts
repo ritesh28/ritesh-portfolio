@@ -48,9 +48,8 @@ export const EXPERIENCES: Experience[] = [
     company_logo: Pwc,
     duration: '2022 - Present',
     designation: 'Senior Associate',
-    //todo
     workDescription:
-      'I help build and scale Google Photos. Increased throughput of our primary services by 70%. Migrated backend service from Java to Go. Also helped make it look prettier.',
+      'Developed AI-driven compliance and document analysis platforms—Pathfinder and IDA—automating regulation parsing and data extraction using LLMs, Form Recognizer, and full-stack solutions with Next.js, NestJS, GraphQL, and PostgreSQL.',
   },
 ];
 

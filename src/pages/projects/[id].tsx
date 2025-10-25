@@ -105,7 +105,7 @@ export default function ProjectsPage({ mdxSource, project }: InferGetStaticProps
                   </PopoverTrigger>
                   <PopoverContent className='w-fit'>
                     <div className='flex flex-col items-center justify-center gap-4'>
-                      <Link href='/'>
+                      <Link href='/' scroll={false}>
                         <AnimateButtonVariant>
                           <Button className='flex items-center gap-2 cursor-pointer'>
                             <House />
@@ -113,7 +113,7 @@ export default function ProjectsPage({ mdxSource, project }: InferGetStaticProps
                           </Button>
                         </AnimateButtonVariant>
                       </Link>
-                      <Link href='/projects'>
+                      <Link href='/projects' scroll={false}>
                         <AnimateButtonVariant>
                           <Button className='flex items-center gap-2 cursor-pointer'>
                             <Kanban />
