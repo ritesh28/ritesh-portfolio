@@ -74,16 +74,16 @@ export interface Project {
   tools: string[];
 }
 export const PROJECTS: Record<string, Project> = {
-  '12987f59-1dc2-4df8-9119-a04ebca76061': {
-    id: '12987f59-1dc2-4df8-9119-a04ebca76061',
-    title: 'Motion Framer Animation',
+  'b7e2a941-8c3d-4f2a-9e1b-6d5c8f7a9e04': {
+    id: 'b7e2a941-8c3d-4f2a-9e1b-6d5c8f7a9e04',
+    title: 'Large Language Models (LLMs) Applications and Features',
     small_description:
-      'This website showcases the capabilities of the Framer Motion library in React. It features interactive examples and animations that demonstrate key concepts like transitions, gestures, and layout animations.',
+      'This project showcases implementations of RAG (Retrieval-Augmented Generation), agent orchestration, and other LLM-powered applications. Each notebook provides hands-on examples and tutorials for working with modern AI models.',
     featured: true,
-    github_repo_name: 'animation-next',
-    github_image_path: 'public/page_home.png',
-    demo_link: 'https://animation-next-lemon.vercel.app',
-    tools: ['Motion', 'Front-End', 'TS'],
+    github_repo_name: 'llm-py',
+    github_image_path: 'banner.png',
+    demo_link: null,
+    tools: ['AI', 'LLM', 'Data Science', 'Python'],
   },
   '57d94d05-b100-413f-af2b-3214d12980ec': {
     id: '57d94d05-b100-413f-af2b-3214d12980ec',
@@ -107,12 +107,23 @@ export const PROJECTS: Record<string, Project> = {
     demo_link: 'https://table-next-mauve.vercel.app/',
     tools: ['TanStack', 'Front-End', 'TS'],
   },
+  '12987f59-1dc2-4df8-9119-a04ebca76061': {
+    id: '12987f59-1dc2-4df8-9119-a04ebca76061',
+    title: 'Motion Framer Animation',
+    small_description:
+      'This website showcases the capabilities of the Framer Motion library in React. It features interactive examples and animations that demonstrate key concepts like transitions, gestures, and layout animations.',
+    featured: false,
+    github_repo_name: 'animation-next',
+    github_image_path: 'public/page_home.png',
+    demo_link: 'https://animation-next-lemon.vercel.app',
+    tools: ['Motion', 'Front-End', 'TS'],
+  },
   'b4c5d6e7-f890-1234-5678-9abcdef01234': {
     id: 'b4c5d6e7-f890-1234-5678-9abcdef01234',
     title: 'Blog Astro',
     small_description:
       'A developer blog built with Astro.js, featuring usage guides, troubleshooting tips, and feature insights on libraries and frameworks. Topics span JavaScript, Python, and data science, offering practical help for developers at every level.',
-    featured: true,
+    featured: false,
     github_repo_name: 'blog-astro',
     github_image_path: 'public/page_home.png',
     demo_link: 'https://blog-astro-dun.vercel.app/',
