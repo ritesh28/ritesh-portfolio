@@ -85,6 +85,17 @@ export const PROJECTS: Record<string, Project> = {
     demo_link: null,
     tools: ['AI', 'LLM', 'Data Science', 'Python'],
   },
+  '8e9fdc27-3854-4e8d-9393-d181b0dae73b': {
+    id: '8e9fdc27-3854-4e8d-9393-d181b0dae73b',
+    title: 'Machine Learning (ML) Projects and Tutorials',
+    small_description:
+      'This repository contains a collection of machine learning projects and tutorials, covering topics like regression, classification, clustering, and deep learning. Each project includes code examples and explanations to help you understand key ML concepts.',
+    featured: true,
+    github_repo_name: 'machine-learning-py',
+    github_image_path: 'banner.png',
+    demo_link: null,
+    tools: ['AI', 'ML', 'Algorithm', 'Python'],
+  },
   '57d94d05-b100-413f-af2b-3214d12980ec': {
     id: '57d94d05-b100-413f-af2b-3214d12980ec',
     title: 'Design Patterns',
