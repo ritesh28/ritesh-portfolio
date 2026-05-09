@@ -76,11 +76,11 @@ export interface Project {
 export const PROJECTS: Record<string, Project> = {
   'b7e2a941-8c3d-4f2a-9e1b-6d5c8f7a9e04': {
     id: 'b7e2a941-8c3d-4f2a-9e1b-6d5c8f7a9e04',
-    title: 'Large Language Models (LLMs) Applications and Features',
+    title: 'Large Language Model (LLM) and Natural Language Processing (NLP) applications, workflows, and end-to-end pipelines',
     small_description:
-      'This project showcases implementations of RAG (Retrieval-Augmented Generation), agent orchestration, and other LLM-powered applications. Each notebook provides hands-on examples and tutorials for working with modern AI models.',
+      'This repository contains a curated collection of Python notebooks focused on Large Language Models (LLMs) and Natural Language Processing (NLP) applications. It includes practical implementations of text preprocessing, prompt engineering, transformer-based models, retrieval-augmented generation (RAG), fine-tuning workflows, and AI automation pipelines.',
     featured: true,
-    github_repo_name: 'llm-py',
+    github_repo_name: 'llm-nlp-py',
     github_image_path: 'banner.png',
     demo_link: null,
     tools: ['AI', 'LLM', 'Data Science', 'Python'],
