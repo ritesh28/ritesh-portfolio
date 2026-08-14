@@ -1,7 +1,7 @@
 import { AnimateSvgPath } from '@/components/animate-svg-path';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
-import { BACKEND_SKILL_GROUP, DEVOPS_SKILL_GROUP, FRONTEND_SKILL_GROUP, MISC_SKILL_GROUP } from '@/models';
+import { SKILLS } from '@/models';
 import { motion, Variants } from 'framer-motion';
 import { useCallback } from 'react';
 
@@ -16,13 +16,13 @@ export const fadeInAnimationVariants = {
   }),
 } satisfies Variants;
 
-const skillGroups = [FRONTEND_SKILL_GROUP, BACKEND_SKILL_GROUP, DEVOPS_SKILL_GROUP, MISC_SKILL_GROUP];
+const SKILL_GROUPS = Object.values(SKILLS);
 
 export function SkillsSection() {
   const calculateCustom = useCallback((skillGroupIndex: number, skillIndex: number) => {
     let val = 0;
     for (let index = 0; index < skillGroupIndex; index++) {
-      val += skillGroups[index].length;
+      val += SKILL_GROUPS[index].length;
     }
     val += skillIndex;
     return val;
@@ -36,8 +36,8 @@ export function SkillsSection() {
           <AnimateSvgPath className='left-0 w-full -bottom-4 lg:-bottom-6' />
         </span>
       </h3>
-      <div className='flex flex-col gap-4'>
-        {skillGroups.map((skillGroup, skillGroupIndex) => (
+      <div className='flex flex-col gap-5'>
+        {SKILL_GROUPS.map((skillGroup, skillGroupIndex) => (
           <div key={skillGroupIndex} className='flex gap-2'>
             {skillGroup.map((skill, skillIndex) => (
               <motion.div

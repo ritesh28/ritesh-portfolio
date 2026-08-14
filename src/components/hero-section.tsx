@@ -19,12 +19,13 @@ export function HeroSection() {
               <AnimateSvgPath className='left-0 w-full top-0 lg:-top-2' />
             </span>
           </h2>
-          <h3 className='text-muted-foreground text-[60%]'>Full Stack + GenAI Engineer</h3>
+          <h3 className='text-muted-foreground text-[60%]'>AI Engineer</h3>
         </div>
         <p className='text-base text-muted-foreground md:text-lg lg:text-xl'>
-          Blending deep expertise in Generative AI with full stack development, I craft intelligent, end-to-end web solutions. My toolkit includes
-          Python for AI engineering and Next.js/NestJS for building fast, scalable applications. I focus on integrating advanced AI models into
-          real-world products that are both smart and user-friendly.
+          Blending deep expertise in LLM with full-stack engineering, I build predictable, traceable, and stateful agentic systems at scale. My
+          toolkit includes Python for developing NLP tools and harness engineering, alongside Next.js and NestJS to architect virtual file systems and
+          sandboxes. I focus on integrating autonomous loops into robust architecture, transforming complex AI workflows into reliable,
+          enterprise-ready solutions.
         </p>
         <div className='flex flex-wrap items-start gap-3 lg:gap-5'>
           <Link href='#contact'>

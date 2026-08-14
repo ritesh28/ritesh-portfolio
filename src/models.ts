@@ -11,20 +11,33 @@ interface SkillProps {
   featured: boolean;
 }
 
-const SKILLS = {
-  nextjs: { name: 'Next.js', icon: RiNextjsFill, featured: true } as SkillProps,
-  nestjs: { name: 'NestJS', icon: SiNestjs, featured: true } as SkillProps,
-  astrojs: { name: 'Astro.js', icon: SiAstro, featured: true } as SkillProps,
-  python: { name: 'Python', icon: SiPython, featured: false } as SkillProps,
-  docker: { name: 'Docker', icon: SiDocker, featured: true } as SkillProps,
-  designPatterns: { name: 'Design Patterns', icon: SiVorondesign, featured: false } as SkillProps,
-} as const;
-
-// group the skills in some way (like fe, be, db, ai, python-package, devops, other - design)
-export const FRONTEND_SKILL_GROUP = [SKILLS.nextjs, SKILLS.astrojs];
-export const BACKEND_SKILL_GROUP = [SKILLS.nestjs, SKILLS.python];
-export const DEVOPS_SKILL_GROUP = [SKILLS.docker];
-export const MISC_SKILL_GROUP = [SKILLS.designPatterns];
+export const SKILLS = {
+  ai: [
+    { name: 'NLP', icon: SiPython, featured: true },
+    { name: 'Vercel AI SDK', icon: SiAstro, featured: true },
+    { name: 'RAG', icon: SiPython, featured: true },
+    { name: 'Harness', icon: SiDocker, featured: true },
+    { name: 'Agentic Pipeline', icon: SiPython, featured: false },
+    { name: 'Prompt Engineering', icon: SiPython, featured: false },
+  ],
+  fullStack: [
+    { name: 'React.js', icon: RiNextjsFill, featured: false },
+    { name: 'Next.js', icon: RiNextjsFill, featured: true },
+    { name: 'NestJS', icon: SiNestjs, featured: true },
+    { name: 'Astro.js', icon: SiAstro, featured: false },
+    { name: 'Streamlit', icon: SiPython, featured: true },
+    { name: 'Python', icon: SiPython, featured: false },
+  ],
+  dataAndInfrastructure: [
+    { name: 'Docker', icon: SiDocker, featured: true },
+    { name: 'Kubernetes', icon: SiDocker, featured: true },
+    { name: 'PostgreSQL', icon: SiDocker, featured: false },
+  ],
+  engineering: [
+    { name: 'Design Patterns', icon: SiVorondesign, featured: false },
+    { name: 'Data Structures & Algorithms', icon: SiVorondesign, featured: false },
+  ],
+} as Record<string, SkillProps[]>;
 
 interface Experience {
   company_name: string;
