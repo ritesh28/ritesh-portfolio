@@ -1,7 +1,11 @@
 import { StaticImageData } from 'next/image';
 import { IconType } from 'react-icons';
+import { BiLogoPostgresql } from 'react-icons/bi';
+import { FaRobot } from 'react-icons/fa';
+import { IoLanguage } from 'react-icons/io5';
+import { PiTreeViewFill } from 'react-icons/pi';
 import { RiNextjsFill } from 'react-icons/ri';
-import { SiAstro, SiDocker, SiNestjs, SiPython, SiVorondesign } from 'react-icons/si';
+import { SiAstro, SiDocker, SiKubernetes, SiNestjs, SiPython, SiStreamlit, SiVercel, SiVorondesign } from 'react-icons/si';
 import Infosys from '../public/infosys.png';
 import Pwc from '../public/pwc.png';
 
@@ -13,29 +17,29 @@ interface SkillProps {
 
 export const SKILLS = {
   ai: [
-    { name: 'NLP', icon: SiPython, featured: true },
-    { name: 'Vercel AI SDK', icon: SiAstro, featured: true },
-    { name: 'RAG', icon: SiPython, featured: true },
-    { name: 'Harness', icon: SiDocker, featured: true },
-    { name: 'Agentic Pipeline', icon: SiPython, featured: false },
-    { name: 'Prompt Engineering', icon: SiPython, featured: false },
+    { name: 'NLP', icon: IoLanguage, featured: true },
+    { name: 'Vercel AI SDK', icon: SiVercel, featured: true },
+    { name: 'RAG', icon: FaRobot, featured: true },
+    { name: 'Harness', icon: FaRobot, featured: true },
+    { name: 'Agentic Pipeline', icon: FaRobot, featured: false },
+    { name: 'Prompt Engineering', icon: FaRobot, featured: false },
   ],
   fullStack: [
     { name: 'React.js', icon: RiNextjsFill, featured: false },
     { name: 'Next.js', icon: RiNextjsFill, featured: true },
     { name: 'NestJS', icon: SiNestjs, featured: true },
     { name: 'Astro.js', icon: SiAstro, featured: false },
-    { name: 'Streamlit', icon: SiPython, featured: true },
+    { name: 'Streamlit', icon: SiStreamlit, featured: true },
     { name: 'Python', icon: SiPython, featured: false },
   ],
   dataAndInfrastructure: [
     { name: 'Docker', icon: SiDocker, featured: true },
-    { name: 'Kubernetes', icon: SiDocker, featured: true },
-    { name: 'PostgreSQL', icon: SiDocker, featured: false },
+    { name: 'Kubernetes', icon: SiKubernetes, featured: true },
+    { name: 'PostgreSQL', icon: BiLogoPostgresql, featured: false },
   ],
   engineering: [
     { name: 'Design Patterns', icon: SiVorondesign, featured: false },
-    { name: 'Data Structures & Algorithms', icon: SiVorondesign, featured: false },
+    { name: 'Data Structures & Algorithms', icon: PiTreeViewFill, featured: false },
   ],
 } as Record<string, SkillProps[]>;
 
