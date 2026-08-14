@@ -53,20 +53,20 @@ interface Experience {
 
 export const EXPERIENCES: Experience[] = [
   {
-    company_name: 'Infosys',
-    company_logo: Infosys,
-    duration: '2015 - 2022',
-    designation: 'Technology Analyst',
-    workDescription:
-      'Designed and developed scalable full-stack solutions—Open Banking consent management, HPaaS provisioning platform, and TEMS system—improving security, automation, and productivity through React.js, Node.js, Azure, Redis, and SQL Server integrations.',
-  },
-  {
     company_name: 'Pwc',
     company_logo: Pwc,
     duration: '2022 - Present',
     designation: 'Senior Associate',
     workDescription:
       'Developed AI-driven compliance and document analysis platforms—Pathfinder and IDA—automating regulation parsing and data extraction using LLMs, Form Recognizer, and full-stack solutions with Next.js, NestJS, GraphQL, and PostgreSQL.',
+  },
+  {
+    company_name: 'Infosys',
+    company_logo: Infosys,
+    duration: '2015 - 2022',
+    designation: 'Technology Analyst',
+    workDescription:
+      'Designed and developed scalable full-stack solutions—Open Banking consent management, HPaaS provisioning platform, and TEMS system—improving security, automation, and productivity through React.js, Node.js, Azure, Redis, and SQL Server integrations.',
   },
 ];
 
