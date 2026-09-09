@@ -58,7 +58,7 @@ export const EXPERIENCES: Experience[] = [
     duration: '2022 - Present',
     designation: 'Senior Associate',
     workDescription:
-      'Developed AI-driven compliance and document analysis platforms—Pathfinder and IDA—automating regulation parsing and data extraction using LLMs, Form Recognizer, and full-stack solutions with Next.js, NestJS, GraphQL, and PostgreSQL.',
+      'Designed and built Pathfinder, a production multi-agent AI compliance platform that reduced review effort by 60% for 100+ users. Implemented scalable orchestration, vectorless RAG architectures, LLM evaluation frameworks, and robust AI observability.',
   },
   {
     company_name: 'Infosys',
@@ -66,7 +66,7 @@ export const EXPERIENCES: Experience[] = [
     duration: '2015 - 2022',
     designation: 'Technology Analyst',
     workDescription:
-      'Designed and developed scalable full-stack solutions—Open Banking consent management, HPaaS provisioning platform, and TEMS system—improving security, automation, and productivity through React.js, Node.js, Azure, Redis, and SQL Server integrations.',
+      'Developed IDA, an AI document extraction pipeline using Azure Form Recognizer and Python microservices, cutting data-entry effort by 70%. Built an Open Banking consent system for 100K+ users and TEMS, accelerating release cycles by 20–25%.',
   },
 ];
 
