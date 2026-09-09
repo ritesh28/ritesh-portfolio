@@ -91,6 +91,17 @@ export interface Project {
   tools: string[];
 }
 export const PROJECTS: Record<string, Project> = {
+  '2dbea365-a98c-4be2-bec6-f4631fb84135': {
+    id: '2dbea365-a98c-4be2-bec6-f4631fb84135',
+    title: 'Skill Tree (Vectorless) RAG',
+    small_description:
+      'Terminal chatbot where skills (markdown trees) are first-class tools. Skills live under skills/; skill-sync generates src/generated/skills.ts for tool calling.',
+    featured: true,
+    github_repo_name: 'skill-tree-rag',
+    github_image_path: 'public/page_home.png',
+    demo_link: null,
+    tools: ['Agentic', 'RAG', 'Skills', 'Vercel AI SDK'],
+  },
   'b7e2a941-8c3d-4f2a-9e1b-6d5c8f7a9e04': {
     id: 'b7e2a941-8c3d-4f2a-9e1b-6d5c8f7a9e04',
     title: 'Large Language Model (LLM) and Natural Language Processing (NLP) applications, workflows, and end-to-end pipelines',
@@ -129,7 +140,7 @@ export const PROJECTS: Record<string, Project> = {
     title: 'TanStack Table Demo',
     small_description:
       'This website demonstrates TanStack Table features like multi-sorting, column reordering, row pinning, filtering (basic and advanced), column visibility, row selection, and pagination — showcasing its power for building interactive data grids.',
-    featured: true,
+    featured: false,
     github_repo_name: 'table-next',
     github_image_path: 'public/page_home.png',
     demo_link: 'https://table-next-mauve.vercel.app/',

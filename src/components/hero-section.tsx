@@ -22,10 +22,10 @@ export function HeroSection() {
           <h3 className='text-muted-foreground text-[60%]'>AI Engineer</h3>
         </div>
         <p className='text-base text-muted-foreground md:text-lg lg:text-xl'>
-          Blending deep expertise in LLM with full-stack engineering, I build predictable, traceable, and stateful agentic systems at scale. My
-          toolkit includes Python for developing NLP tools and harness engineering, alongside Next.js and NestJS to architect virtual file systems and
-          sandboxes. I focus on integrating autonomous loops into robust architecture, transforming complex AI workflows into reliable,
-          enterprise-ready solutions.
+          Moving AI from experimental prototypes into reliable production environments gets me out of bed. I take a deterministic and rigorous
+          approach to agentic engineering, focusing on creating secure, stateful systems that execute workflows traceably. Through precise prompt and
+          harness engineering, I build robust autonomous architectures that deliver consistent, scalable business value without sacrificing enterprise
+          security.
         </p>
         <div className='flex flex-wrap items-start gap-3 lg:gap-5'>
           <Link href='#contact'>
