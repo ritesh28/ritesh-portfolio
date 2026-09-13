@@ -21,11 +21,11 @@ export function VerticalBar({ activeTab }: VerticalBarProps) {
           <div>
             <nav>
               <ul className='flex flex-col items-center gap-10 [&>li]:[writing-mode:vertical-rl] [&>li]:p-2'>
-                <li className={cn(activeTab === 'projects' && 'border-r-4 border-ring')}>
-                  <Link href={`#${TABS[0]}`}>Projects</Link>
-                </li>
                 <li className={cn(activeTab === 'experience' && 'border-r-4 border-ring')}>
-                  <Link href={`#${TABS[1]}`}>Exp.</Link>
+                  <Link href={`#${TABS[0]}`}>Exp.</Link>
+                </li>
+                <li className={cn(activeTab === 'projects' && 'border-r-4 border-ring')}>
+                  <Link href={`#${TABS[1]}`}>Projects</Link>
                 </li>
                 <li className={cn(activeTab === 'contact' && 'border-r-4 border-ring')}>
                   <Link href={`#${TABS[2]}`}>Contact</Link>

@@ -9,7 +9,7 @@ import { VerticalBar } from '@/components/vertical-bar';
 import { useState } from 'react';
 import { InView } from 'react-intersection-observer';
 
-export const TABS = ['projects', 'experience', 'contact'] as const;
+export const TABS = ['experience', 'projects', 'contact'] as const;
 
 const headContent = {
   title: 'Ritesh Raj | Portfolio',
@@ -57,7 +57,7 @@ export default function Page() {
                   onChange={(inView, _) => inView && setActiveTab(TABS['0'])}
                   className='mb-4 p-8'
                 >
-                  <ProjectsSection />
+                  <ExperienceSection />
                 </InView>
                 <InView
                   as='section'
@@ -67,7 +67,7 @@ export default function Page() {
                   onChange={(inView, _) => inView && setActiveTab(TABS['1'])}
                   className='mb-4 p-8'
                 >
-                  <ExperienceSection />
+                  <ProjectsSection />
                 </InView>
                 <InView
                   as='section'
