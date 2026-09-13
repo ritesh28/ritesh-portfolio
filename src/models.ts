@@ -115,14 +115,14 @@ export const PROJECTS: Record<string, Project> = {
   },
   'b7e2a941-8c3d-4f2a-9e1b-6d5c8f7a9e04': {
     id: 'b7e2a941-8c3d-4f2a-9e1b-6d5c8f7a9e04',
-    title: 'Large Language Model (LLM) and Natural Language Processing (NLP) applications, workflows, and end-to-end pipelines',
+    title: 'Hands-on LLM and NLP notebooks',
     small_description:
-      'This repository contains a curated collection of Python notebooks focused on Large Language Models (LLMs) and Natural Language Processing (NLP) applications. It includes practical implementations of text preprocessing, prompt engineering, transformer-based models, retrieval-augmented generation (RAG), fine-tuning workflows, and AI automation pipelines.',
+      'Practical walkthroughs of classical LLM and NLP applications. Topics include RAG, agentic engineering, multi-agent orchestration, rail guards, evaluation, and more.',
     featured: true,
     github_repo_name: 'llm-nlp-py',
     github_image_path: 'banner.png',
     demo_link: null,
-    tools: ['AI', 'LLM', 'NLP', 'Data Science', 'Python'],
+    tools: ['LLM', 'NLP', 'Data Science', 'Python'],
   },
   '8e9fdc27-3854-4e8d-9393-d181b0dae73b': {
     id: '8e9fdc27-3854-4e8d-9393-d181b0dae73b',
