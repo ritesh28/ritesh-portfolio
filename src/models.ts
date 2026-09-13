@@ -126,14 +126,14 @@ export const PROJECTS: Record<string, Project> = {
   },
   '8e9fdc27-3854-4e8d-9393-d181b0dae73b': {
     id: '8e9fdc27-3854-4e8d-9393-d181b0dae73b',
-    title: 'Machine Learning (ML) and Deep Learning (DL) Projects and Tutorials',
+    title: 'ML & DL Projects and Tutorials',
     small_description:
-      'A curated collection of Python notebooks for Machine Learning (ML) and Deep Learning (DL) applications, covering end-to-end workflows, model development, experimentation, and deployment pipelines.',
+      'Practical walkthroughs of classical ML workflows: load data, train a model, evaluate, and experiment. Topics include text classification, face detection, generative modeling, and digit recognition.',
     featured: true,
     github_repo_name: 'ml-dl-py',
     github_image_path: 'banner.png',
     demo_link: null,
-    tools: ['AI', 'ML', 'DL', 'Algorithm', 'Python'],
+    tools: ['ML', 'DL', 'Data Science', 'Python'],
   },
   '57d94d05-b100-413f-af2b-3214d12980ec': {
     id: '57d94d05-b100-413f-af2b-3214d12980ec',
