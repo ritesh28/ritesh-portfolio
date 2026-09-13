@@ -91,11 +91,22 @@ export interface Project {
   tools: string[];
 }
 export const PROJECTS: Record<string, Project> = {
+  '1970d3c9-8972-4549-b9fa-35c5941a7847': {
+    id: '1970d3c9-8972-4549-b9fa-35c5941a7847',
+    title: 'VFS Marketplace Agent',
+    small_description:
+      'A demo app that gives an AI agent a lazy-loading virtual file system (VFS) as its working surface with scoped access and rail guards for a small marketplace domain (sellers, customers, support).',
+    featured: true,
+    github_repo_name: 'vfs-marketplace-agent',
+    github_image_path: 'public/banner.png',
+    demo_link: "https://vfs-marketplace-agent.vercel.app/",
+    tools: ['Agentic', 'VFS', 'Rail Guard', 'Vercel AI SDK'],
+  },
   '2dbea365-a98c-4be2-bec6-f4631fb84135': {
     id: '2dbea365-a98c-4be2-bec6-f4631fb84135',
     title: 'Skill Tree (Vectorless) RAG',
     small_description:
-      'Terminal chatbot where skills (markdown trees) are first-class tools. Skills live under skills/; skill-sync generates src/generated/skills.ts for tool calling.',
+      'Terminal chatbot where skills (markdown and scripts trees) are first-class tools. Skills live under skills/; skill-sync generates src/generated/skills.ts for tool calling.',
     featured: true,
     github_repo_name: 'skill-tree-rag',
     github_image_path: 'public/page_home.png',
