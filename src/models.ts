@@ -99,7 +99,7 @@ export const PROJECTS: Record<string, Project> = {
     title: 'Design Patterns',
     small_description:
       'This project showcases all 23 Gang of Four (GoF) software design patterns implemented in JavaScript. It serves as a comprehensive reference for understanding and applying design principles in real-world development.',
-    featured: true,
+    featured: false,
     github_repo_name: 'design-pattern-js',
     github_image_path: 'Design%20Patterns.png',
     demo_link: null,
