@@ -117,7 +117,7 @@ export const PROJECTS: Record<string, Project> = {
     id: 'b7e2a941-8c3d-4f2a-9e1b-6d5c8f7a9e04',
     title: 'Hands-on LLM and NLP notebooks',
     small_description:
-      'Practical walkthroughs of classical LLM and NLP applications. Topics include RAG, agentic engineering, multi-agent orchestration, rail guards, evaluation, and more.',
+      'Practical walkthroughs of classical LLM and NLP applications. Topics include RAG, Agentic Engineering, multi-agent orchestration, rail guards, Evals, and more.',
     featured: true,
     github_repo_name: 'llm-nlp-py',
     github_image_path: 'banner.png',
