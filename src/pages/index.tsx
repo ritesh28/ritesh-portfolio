@@ -5,12 +5,11 @@ import { HeadComponent } from '@/components/head';
 import { HeroSection } from '@/components/hero-section';
 import { HorizontalBar } from '@/components/horizontal-bar';
 import { ProjectsSection } from '@/components/projects-section';
-import { SkillsSection } from '@/components/skills-section';
 import { VerticalBar } from '@/components/vertical-bar';
 import { useState } from 'react';
 import { InView } from 'react-intersection-observer';
 
-export const TABS = ['skills', 'projects', 'experience', 'contact'] as const;
+export const TABS = ['projects', 'experience', 'contact'] as const;
 
 const headContent = {
   title: 'Ritesh Raj | Portfolio',
@@ -58,7 +57,7 @@ export default function Page() {
                   onChange={(inView, _) => inView && setActiveTab(TABS['0'])}
                   className='mb-4 p-8'
                 >
-                  <SkillsSection />
+                  <ProjectsSection />
                 </InView>
                 <InView
                   as='section'
@@ -68,7 +67,7 @@ export default function Page() {
                   onChange={(inView, _) => inView && setActiveTab(TABS['1'])}
                   className='mb-4 p-8'
                 >
-                  <ProjectsSection />
+                  <ExperienceSection />
                 </InView>
                 <InView
                   as='section'
@@ -76,16 +75,6 @@ export default function Page() {
                   threshold={0}
                   rootMargin='-40%'
                   onChange={(inView, _) => inView && setActiveTab(TABS['2'])}
-                  className='mb-4 p-8'
-                >
-                  <ExperienceSection />
-                </InView>
-                <InView
-                  as='section'
-                  id={TABS['3']}
-                  threshold={0}
-                  rootMargin='-40%'
-                  onChange={(inView, _) => inView && setActiveTab(TABS['3'])}
                   className='mb-4 p-8'
                 >
                   <ContactSection />
