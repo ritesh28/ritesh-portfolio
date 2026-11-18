@@ -20,14 +20,14 @@ export function VerticalBar({ activeTab }: VerticalBarProps) {
           </Link>
           <div>
             <nav>
-              <ul className='flex flex-col items-center gap-10 [&>li]:[writing-mode:vertical-rl] [&>li]:p-2'>
-                <li className={cn(activeTab === 'experience' && 'border-r-4 border-ring')}>
+              <ul className='flex flex-col items-center gap-10 [&>li]:[writing-mode:vertical-rl] [&>li]:p-2 [&>li>a]:text-muted-foreground [&>li>a]:transition-colors [&>li>a]:hover:text-accent-text'>
+                <li className={cn(activeTab === 'experience' && 'border-r-4 border-accent [&>a]:text-accent-text')}>
                   <Link href={`#${TABS[0]}`}>Exp.</Link>
                 </li>
-                <li className={cn(activeTab === 'projects' && 'border-r-4 border-ring')}>
+                <li className={cn(activeTab === 'projects' && 'border-r-4 border-accent [&>a]:text-accent-text')}>
                   <Link href={`#${TABS[1]}`}>Projects</Link>
                 </li>
-                <li className={cn(activeTab === 'contact' && 'border-r-4 border-ring')}>
+                <li className={cn(activeTab === 'contact' && 'border-r-4 border-accent [&>a]:text-accent-text')}>
                   <Link href={`#${TABS[2]}`}>Contact</Link>
                 </li>
               </ul>

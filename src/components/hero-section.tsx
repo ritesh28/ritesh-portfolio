@@ -19,7 +19,7 @@ export function HeroSection() {
               <AnimateSvgPath className='left-0 w-full top-0 lg:-top-2' />
             </span>
           </h2>
-          <h3 className='text-muted-foreground text-[60%]'>AI Engineer</h3>
+          <h3 className='text-muted-foreground text-[60%]'>Senior AI Engineer</h3>
         </div>
         <p className='text-base text-muted-foreground md:text-lg lg:text-xl'>
           Moving AI from experimental prototypes into reliable production environments gets me out of bed. I take a deterministic and rigorous
@@ -37,17 +37,25 @@ export function HeroSection() {
           </Link>
           <a href={process.env.NEXT_PUBLIC_RESUME} target='_blank'>
             <AnimateButtonVariant>
-              <Button size='lg' variant='secondary' className='underline flex items-center gap-2 cursor-pointer pointer-events-auto'>
+              <Button size='lg' variant='outline' className='flex items-center gap-2 cursor-pointer pointer-events-auto'>
                 <FileText /> <span className='whitespace-nowrap'>Resume</span>
               </Button>
             </AnimateButtonVariant>
           </a>
         </div>
         <div className='md:hidden flex flex-wrap gap-3 text-2xl -mt-2 pointer-events-auto'>
-          <a href={process.env.NEXT_PUBLIC_GITHUB_LINK} target='_blank'>
+          <a
+            href={process.env.NEXT_PUBLIC_GITHUB_LINK}
+            target='_blank'
+            className='text-muted-foreground transition-colors hover:text-accent-text'
+          >
             <SiGithub />
           </a>
-          <a href={process.env.NEXT_PUBLIC_LINKEDIN_LINK} target='_blank'>
+          <a
+            href={process.env.NEXT_PUBLIC_LINKEDIN_LINK}
+            target='_blank'
+            className='text-muted-foreground transition-colors hover:text-accent-text'
+          >
             <SiLinkedin />
           </a>
         </div>

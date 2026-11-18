@@ -99,7 +99,7 @@ export default function ProjectsPage({ mdxSource, project }: InferGetStaticProps
               <div className='fixed bottom-[5rem] right-[2.5rem] z-10'>
                 <Popover>
                   <PopoverTrigger asChild>
-                    <Button className='h-[4rem] w-[4rem] rounded-full bg-blue-600 dark:bg-blue-400 hover:brightness-110 hover:cursor-pointer'>
+                    <Button className='h-[4rem] w-[4rem] cursor-pointer rounded-full bg-accent text-accent-foreground hover:bg-accent/90'>
                       <Ellipsis className='size-8' />
                     </Button>
                   </PopoverTrigger>
@@ -131,7 +131,7 @@ export default function ProjectsPage({ mdxSource, project }: InferGetStaticProps
                       {project.demo_link && (
                         <a href={project.demo_link} target='_blank'>
                           <AnimateButtonVariant>
-                            <Button className='flex items-center gap-2 cursor-pointer'>
+                            <Button variant='outline' className='flex cursor-pointer items-center gap-2'>
                               <ExternalLink /> Demo
                             </Button>
                           </AnimateButtonVariant>

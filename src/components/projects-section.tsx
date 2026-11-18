@@ -17,7 +17,7 @@ export function ProjectsSection() {
         </span>
       </h3>
       <div className='flex'></div>
-      <ul className='flex items-stretch flex-wrap gap-5'>
+      <ul className='flex flex-wrap items-stretch gap-7'>
         {Object.values(PROJECTS)
           .filter((project) => project.featured)
           .map((project) => (
@@ -27,15 +27,15 @@ export function ProjectsSection() {
               whileInView={{ y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className='basis-[21rem]'
+              className='basis-[22rem]'
             >
               <ProjectCard project={project} layoutPrefix='projects-section' />
             </motion.li>
           ))}
-        <motion.li className='self-center basis-[21rem]'>
+        <motion.li className='basis-[22rem] self-center'>
           <Link href='/projects' scroll={false} className='w-fit block'>
             <AnimateButtonVariant>
-              <Button className='px-8 py-7 w-full lg:w-auto cursor-pointer origin-right bg-featured hover:bg-featured/80 text-foreground'>
+              <Button className='origin-right cursor-pointer bg-accent px-8 py-7 text-accent-foreground hover:bg-accent/90 w-full lg:w-auto'>
                 <div className='flex items-center gap-2 text-lg'>
                   <Kanban className='size-5' />
                   More Projects

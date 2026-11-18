@@ -88,7 +88,11 @@ export function ContactSection() {
                 <AlertDescription className='text-inherit'>
                   <p>
                     Looks like the form had a moment. You can still reach me the old-fashioned (modern) way —{' '}
-                    <a href={process.env.NEXT_PUBLIC_LINKEDIN_LINK} target='_blank' className='inline underline'>
+                    <a
+                      href={process.env.NEXT_PUBLIC_LINKEDIN_LINK}
+                      target='_blank'
+                      className='inline text-accent-text underline underline-offset-2 hover:text-accent-text/80'
+                    >
                       connect with me on LinkedIn!
                     </a>
                   </p>
@@ -102,7 +106,11 @@ export function ContactSection() {
                 <AlertDescription className='text-inherit'>
                   <p>
                     In the meantime, go ahead and explore{' '}
-                    <Link href='/projects' scroll={false} className='inline underline'>
+                    <Link
+                      href='/projects'
+                      scroll={false}
+                      className='inline text-accent-text underline underline-offset-2 hover:text-accent-text/80'
+                    >
                       my side projects
                     </Link>{' '}
                     — they&apos;re cooler than my email response time.

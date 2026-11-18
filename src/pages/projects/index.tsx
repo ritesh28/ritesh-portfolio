@@ -55,20 +55,20 @@ export default function ProjectsPage() {
                       if (value === 'horizontal' || value === 'vertical') setLayoutMode(value);
                     }}
                   >
-                    <ToggleGroupItem value='vertical' aria-label='Toggle bold'>
+                    <ToggleGroupItem value='vertical' aria-label='Vertical layout'>
                       <StretchVertical className='h-4 w-4' />
                     </ToggleGroupItem>
-                    <ToggleGroupItem value='horizontal' aria-label='Toggle italic'>
+                    <ToggleGroupItem value='horizontal' aria-label='Horizontal layout'>
                       <StretchHorizontal className='h-4 w-4' />
                     </ToggleGroupItem>
                   </ToggleGroup>
                 </div>
               </div>
-              <div className={cn('flex flex-wrap gap-5', layoutMode === 'horizontal' && 'flex-col')}>
+              <div className={cn('flex flex-wrap gap-7', layoutMode === 'horizontal' && 'flex-col')}>
                 {Object.values(PROJECTS).map((project) => (
                   <motion.div
                     key={project.id}
-                    className={layoutMode === 'horizontal' ? 'basis-[12rem]' : 'basis-[21rem]'}
+                    className={layoutMode === 'horizontal' ? 'basis-[12rem]' : 'basis-[22rem]'}
                     initial={{ y: 100 }}
                     whileInView={{ y: 0 }}
                     viewport={{ once: true }}
